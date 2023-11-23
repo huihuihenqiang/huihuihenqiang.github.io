@@ -3,25 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Your Machine Learning Blog</title>
+    <title>ZH的个人博客小站</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Your Machine Learning Blog</h1>
+        <h1>ZH的个人博客小站</h1>
     </header>
+
     <nav>
-        <ul>
-            <li><a href="md1.html">Page 1</a></li>
-            <li><a href="md2.html">Page 2</a></li>
-            <!-- Add more navigation links as needed -->
-        </ul>
+        <a href="#">主页</a>
+        <a href="#">读书笔记</a>
+        <a href="#">算法原理</a>
+        <a href="#">实践应用（python）</a>
+        <a href="#">联系我们</a>
     </nav>
-    <section>
-        <!-- Your main content goes here -->
-    </section>
+
+    <div class="container">
+        <section id="column-section" class="column-section">
+            <div class="column" id="column">
+                <h2>专栏</h2>
+                <h3>专栏一 《机器学习精讲》读书笔记</h3>
+                <a href="article/THPML book/math theroy of ML.html">读书笔记（一）经常用到的数学、统计学原理</a>
+                <a href="#">读书笔记（二）基本算法</a>
+                <h3>专栏二 《机器学习理论导引》读书笔记</h3>
+                <a href="#">读书笔记（一）</a>
+                <a href="#">读书笔记（二）</a>
+                <!-- 添加更多文章标题 -->
+            </div>
+        </section>
+
+        <section id="introduction" class="introduction">
+            <h2>本站介绍</h2>
+            <p>欢迎来到机器学习数学知识站点，我们致力于分享深度学习、机器学习领域的数学知识和实践经验。
+                本站初始内容应该只有自己的学习笔记。学习完成之后会逐步完善网址基本内容。
+            </p>
+            <!--img src="img\c.jpg" -->
+            <img src="img\index.jpg" >
+            <!-- 添加更多图片或介绍内容 -->
+            <p>如果对文章的内容有问题，请联系我的邮箱：1870586279@qq.com
+            </p>
+            
+        </section>
+    </div>
+
+    
+
     <footer>
-        <p>&copy; 2023 Your Machine Learning Blog</p>
+        <p>&copy; 2023 机器学习数学知识</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
