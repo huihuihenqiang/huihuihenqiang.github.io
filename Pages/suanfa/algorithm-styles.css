@@ -1,0 +1,72 @@
+body {
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(128, 116, 116);
+    color: #fff;
+  }
+  
+  .algorithm-header {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+  }
+  
+  .algorithm-content {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .algorithm-section {
+    background-color: #2c3e50;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .section-description {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-code {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-code:hover {
+    background-color: #2980b9;
+  }
+  
+  .code-block {
+    display: none;
+  }
+  
+  /* 代码块展开动画效果 */
+  .code-block.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

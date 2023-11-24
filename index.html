@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZH的个人博客小站</title>
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
 </head>
 <body>
+    
     <header>
         <h1>ZH的个人博客小站</h1>
     </header>
-
     <nav>
         <a href="#">主页</a>
-        <a href="#">读书笔记</a>
-        <a href="#">算法原理</a>
-        <a href="#">实践应用（python）</a>
-        <a href="#">联系我们</a>
+        <a href="Pages/Article catalog/notebook.html">读书笔记</a>
+        <a href="Pages/skill/skill.html">奇技淫巧 </a> 
+        <a href="Pages/suanfa/algorithm.html">算法原理</a>
+        <a href="Pages/practice/python_practice.html">实践应用（python）</a>
+        <a href="Pages/contact/contact.html">联系我们</a>
     </nav>
-
-    <div class="container">
+    
+    
+    <div class="container" style="margin-top: 40px;margin-bottom: 50px;">
         <section id="column-section" class="column-section">
             <div class="column" id="column">
                 <h2>专栏</h2>
@@ -29,6 +40,13 @@
                 <h3>专栏二 《机器学习理论导引》读书笔记</h3>
                 <a href="#">读书笔记（一）</a>
                 <a href="#">读书笔记（二）</a>
+                <h3>专栏三 工具使用</h3>
+                <a href="article/Git/Git的使用技巧(一).html"> Git的使用技巧</a>
+                <a href="article/Markdown/Markdown用法（一）.html">Markdown用法</a>
+                <h3>专栏四 软件</h3>
+                <a href="article/Git/Git的使用技巧(一).html"> 使用技巧</a>
+                <a href="article/Markdown/Markdown用法（一）.html">用法</a>
+                
                 <!-- 添加更多文章标题 -->
             </div>
         </section>
@@ -41,17 +59,21 @@
             <!--img src="img\c.jpg" -->
             <img src="img\index.jpg" >
             <!-- 添加更多图片或介绍内容 -->
+            <img src="img\cute.jpg" >
             <p>如果对文章的内容有问题，请联系我的邮箱：1870586279@qq.com
             </p>
-            
         </section>
     </div>
 
-    
+    <div class="leaves-container" id="leaves-container"></div>
+
 
     <footer>
         <p>&copy; 2023 机器学习数学知识</p>
     </footer>
+
+    <!-- 使用 CDN 引入 Anime.js -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1"></script>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>算法原理与实现</title>
+  <link rel="stylesheet" href="algorithm-styles.css">
+</head>
+<body>
+
+  <header class="algorithm-header">
+    <h1>算法原理与实现</h1>
+  </header>
+
+  <div class="algorithm-content">
+    <div class="algorithm-section">
+      <h2 class="section-title">快速排序算法</h2>
+      <p class="section-description">快速排序是一种常用的排序算法，其原理基于分治法。</p>
+      <button class="toggle-code">显示代码</button>
+      <pre class="code-block">
+        <code class="language-python">
+          def quicksort(arr):
+              if len(arr) <= 1:
+                  return arr
+              pivot = arr[len(arr) // 2]
+              left = [x for x in arr if x < pivot]
+              middle = [x for x in arr if x == pivot]
+              right = [x for x in arr if x > pivot]
+              return quicksort(left) + middle + quicksort(right)
+        </code>
+      </pre>
+    </div>
+
+    <div class="algorithm-content">
+        <div class="algorithm-section">
+          <h2 class="section-title">kmeans聚类算法</h2>
+          <p class="section-description">kmeans聚类算法是一种常用的聚类算法。</p>
+          <button class="toggle-code">显示代码</button>
+          <pre class="code-block">
+            <code class="language-python">
+              def quicksort(arr):
+                  if len(arr) <= 1:
+                      return arr
+                  pivot = arr[len(arr) // 2]
+                  left = [x for x in arr if x < pivot]
+                  middle = [x for x in arr if x == pivot]
+                  right = [x for x in arr if x > pivot]
+                  return quicksort(left) + middle + quicksort(right)
+            </code>
+          </pre>
+        </div>
+
+    <!-- 添加更多算法相关内容 -->
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="algorithm-script.js"></script>
+
+</body>
+</html>

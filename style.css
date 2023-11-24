@@ -1,33 +1,71 @@
+
 body {
+    /*overflow: hidden; */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: rgb(211,218,237);
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+    cursor: pointer;
+    
+    
+}
+body:hover {
+    /*background-color: rgba(3,3,1);/* Change background color on hover */
+    background-color: rgba(240, 226, 165, 0.386) ;
+    
+}
+
+.leaves {
+    position: fixed; /* Use fixed position to make leaves appear over the entire page */
+    width: 40px;
+    height: 40px;
+    
+    z-index: -1;
+    background-image: url('img/snow.png'); /* Set the path to your custom snowflake image */
+    background-size: cover;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color:rgb(30,30,30);
+    color:rgb(255, 255, 255);
     text-align: center;
     padding: 1em;
+    z-index: -2;
+    
 }
 
 nav {
-    background-color: #444;
+    background-color:rgb(40, 40, 40);
     padding: 1em;
+    z-index: -2;
+
 }
 
 nav a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 0.5em 1em;
     margin: 0 1em;
     border-radius: 4px;
+    font-size: large;
+    font-weight: 700;
 }
 
 nav a:hover {
     background-color: #555;
 }
+
+/*.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+}
+*/
 
 .container {
     max-width: 800px;
@@ -37,6 +75,16 @@ nav a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+    transition: transform 0.5s ease; /* 添加平移效果的过渡 */
+    z-index: 9999; /* Set a high z-index to ensure it appears on top */
+    
+}
+
+.container:hover {
+    background-color: rgb(249, 245, 230); /* Change background color on hover */
+    transform: scale(1.03); /* 在悬停时放大内容 */
+    
 }
 
 .column-section {
@@ -55,10 +103,14 @@ nav a:hover {
     color: #333;
     display: block;
     margin-bottom: 10px;
+    position: relative;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .column a:hover {
     color: #555;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 悬停时添加阴影效果 */
+    border-color: #555; /* 悬停时改变边框颜色 */
 }
 
 .introduction {
@@ -69,21 +121,14 @@ nav a:hover {
 .introduction img {
     max-width: 100%;
     height: auto;
+    
 }
 
-.carousel {
-    max-width: 100%;
-    overflow: hidden;
-}
 
-.carousel img {
-    width: 100%;
-    height: auto;
-}
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color:rgb(10,10,10);
+    color: RGB(167,254,141);
     text-align: center;
     padding: 1em;
     
@@ -109,3 +154,7 @@ footer {
         flex: 1;
     }
 }
+
+
+
+

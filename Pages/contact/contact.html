@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们</title>
+  <link rel="stylesheet" href="contact-styles.css">
+  <span class="js-cursor-container"></span>
+</head>
+<body>
+
+  <header class="contact-header">
+    <h1>联系我们</h1>
+  </header>
+
+  <section class="contact-form-section">
+    <h2 class="section-title">联系表单</h2>
+    <form id="contact-form">
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">电子邮件地址：</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="subject">主题：</label>
+      <select id="subject" name="subject" required>
+        <option value="general">一般咨询</option>
+        <option value="tech-support">技术支持</option>
+        <option value="partnership">合作机会</option>
+      </select>
+
+      <label for="message">消息正文：</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">提交</button>
+    </form>
+  </section>
+
+  <section class="contact-info-section">
+    <h2 class="section-title">联系信息</h2>
+    <ul>
+      <li><strong>公司名称：</strong> 北京哲也科技有限公司</li>
+      <li><strong>地址：</strong> 北京市</li>
+      <li><strong>电子邮件：</strong> 1870586279@qq.com</li>
+      <li><strong>电话：</strong> +1 (123) 456-7890</li>
+      <li><strong>社交媒体：</strong> <a href="#" target="_blank">Facebook</a>, <a href="#" target="_blank">Twitter</a>, <a href="#" target="_blank">微博</a></li>
+    </ul>
+    <p>女朋友</p>
+    <img src="../../img/mn.jpg" alt="女朋友" style="width: 40%; margin-left: 10%;border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* 添加立体效果的阴影 */
+    border: 6px solid #2481c0; ">
+  </section>
+
+  <section class="online-support-section">
+    <h2 class="section-title">在线客服</h2>
+    <p>有问题需要即时解答？点击下方按钮与我们的在线客服联系。</p>
+    <button class="online-support-button">在线客服</button>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="section-title">常见问题（FAQ）</h2>
+    <ul>
+      <li><strong>问题 1：</strong> 这是一个常见问题的回答。</li>
+      <li><strong>问题 2：</strong> 这是另一个常见问题的回答。</li>
+      <!-- 添加更多常见问题 -->
+    </ul>
+  </section>
+
+  <section class="feedback-section">
+    <h2 class="section-title">反馈</h2>
+    <p>有任何建议或意见？请告诉我们。</p>
+    <button class="feedback-button">提供反馈</button>
+  </section>
+
+  <footer class="contact-footer">
+    <p><a href="#" target="_blank">关于我们</a> | <a href="#" target="_blank">隐私政策</a></p>
+  </footer>
+  <script src="contact-script.js"></script>
+
+</body>
+</html>
