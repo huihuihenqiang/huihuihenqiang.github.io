@@ -1,6 +1,8 @@
 # Markdown用法（一）
 
-![Alt text](_de63bf9f-5dd4-45fd-9cc2-c1f15f3320a8.jpg)
+author: ZH  |  date: 2023-11-25   |   category: Markdown
+
+![Alt text](image2.jpg)
 
 ## 参考链接
 

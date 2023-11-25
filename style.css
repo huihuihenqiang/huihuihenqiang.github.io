@@ -81,11 +81,11 @@ nav a:hover {
     
 }
 
+/*
 .container:hover {
     background-color: rgb(249, 245, 230); /* Change background color on hover */
-    transform: scale(1.03); /* 在悬停时放大内容 */
+    /*transform: scale(1.03); /* 在悬停时放大内容 */
     
-}
 
 .column-section {
     flex: 1;

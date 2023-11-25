@@ -1,0 +1,171 @@
+<!DOCTYPE html><html><head>
+      <title>信息检索</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="信息检索">信息检索 </h1>
+<p>author: ZH  |  date: 2023-11-25   |   category: 信息检索</p>
+<h2 id="信息搜索的逻辑">信息搜索的逻辑 </h2>
+<p><img src="image.png" alt="Alt text"></p>
+<p><img src="image-1.png" alt="Alt text"></p>
+<h2 id="视频课程">视频课程 </h2>
+<h3 id="coursera">Coursera </h3>
+<ul>
+<li><a href="https://www.coursera.org/">https://www.coursera.org/</a></li>
+<li>Coursera由美国斯坦福大学两名计算机科学教授吴恩达(Andrew Ng)和达芙妮·科勒(Daphne Koller)于2012年创办。旨在同世界顶尖大学合作，在线提供免费的网络公开课程。Coursera的首批合作院校包括斯坦福大学、密歇根大学、普林斯顿大学、宾夕法尼亚大学等美国名校。目前已与275多所世界顶尖的高校和公司建立了合作。国内有北大、复旦、交大、南大、香港中文大学、香港科技大学等。<br>
+课程涉及的学科涵盖计算机、商业数据科学、生命科学、社会科学、艺术等热门学科。Coursera提供中文官方平台，运作模式是注册上课，注册时学习者可以填写中文名字，邮箱不支持QQ邮箱，可选用新浪或网易等邮箱，注册后登录方能进入课程学习。不少课程配有中文字幕。有免费课程和收费课程。学习过程包括观看课程视频、参与学习讨论、提交课程作业和穿插课程间的小测验和终极考试。付费课程提供额外的测验和项目，并在课程完成后提供可共享的课程证书。</li>
+</ul>
+<h3 id="udacity">Udacity </h3>
+<ul>
+<li><a href="https://www.udacity.com/">https://www.udacity.com/</a></li>
+<li>Udacity是前斯坦福大学教授、Google X实验室研究人员 Sebastian Thrun创办的一个国外非常先进的在线学习网站，让更多人可以免费接受高质量的教育。Udacity的课程主要是计算机科学、数学、物理、商务，并且偏重于实际应用，包括机器学习、ios及android开发。<br>
+网站提供视频(每一个视频不会超过3分钟)，在线答题、作业、期末考试、讨论区、课程学分认证，并将自己的学习成绩递交给企业。</li>
+</ul>
+<h3 id="metel全球高校课程资源库">Metel全球高校课程资源库 </h3>
+<ul>
+<li><a href="http://www.metel.cn/">http://www.metel.cn/</a></li>
+<li>MeTeL全球高校课程资料库完整真实再现国外先进高校课堂教学过程及育人理念。现已收录美、英、加、澳等国400余所著名高校，2万余教师或教学小组讲授的3万余门课程、60万余课节、380万余个教学资源；<br>
+涵盖5个学科门类，62个一级学科；涉及数学、统计学、机械工程、电气工程、电子科学与技术、计算机科学与技术、化学工程与技术、地质资源与地质工程、石油与天然气工程、安全科学与工程、工商管理等，与教育部的学位授予和人才培养学科目录（2022）一致；<br>
+每门课程包括课程介绍、课程须知、课程表、教学大纲、参考教材、教材评价、任课教师等；每个课可能会有讲义、课件、音频、视频、教学图片、教学案例、阅读材料、作业、习题答案、试卷等课节资源。部分课节为独立的专题研讨会（Seminar）、实验实习、外出考察、演讲讲座、培训讲座等；个别课节会有相关的程序代码、工具软件、数据等资源。</li>
+</ul>
+<h2 id="考试题库">考试题库 </h2>
+<p>银符考试题库B12 <a href="http://www.yfzxmn.com/">http://www.yfzxmn.com/</a></p>
+<h2 id="专业书">专业书 </h2>
+<ul>
+<li>中文专业书： 科学文库、文泉学堂</li>
+<li>英文专业书：SpringerLink电子图书、 Elsevier电子图书、 Wiley电子书、 Wiley 电子教材、IOP电子图书、SEG电子书、Emerald电子书</li>
+</ul>
+<h2 id="论文查询">论文查询 </h2>
+<h3 id="核心期刊">核心期刊 </h3>
+<p><img src="image-2.png" alt="Alt text"></p>
+<h3 id="中文文献查阅">中文文献查阅 </h3>
+<p><img src="image-4.png" alt="Alt text"></p>
+<h3 id="英文文献查阅">英文文献查阅 </h3>
+<h4 id="全文数据库">全文数据库 </h4>
+<ul>
+<li>
+<p>ScienceDirect数据库 <a href="https://www.sciencedirect.com/">https://www.sciencedirect.com/</a><br>
+荷兰爱思唯尔（Elsevier）出版公司创办于1880年，总部位于荷兰阿姆斯特丹，是世界上最大的医学与科学文献出版社之一。除了出版众多著名的期刊，如《The Lancet（柳叶刀）》、《Tetrahedron（四面体）》、《Cell（细胞）》外 ，还拥有众多的图书品牌，如Pergamon、Saunders、Mosby、Academic Press，以及多个有影响力的数据库产品，如Scopus、ScienceDirect、Engineering Village（EI Compendex）等</p>
+</li>
+<li>
+<p>SpringerLink数据库 <a href="https://link.springer.com/">https://link.springer.com/</a><br>
+德国施普林格(Springer Nature)是世界上著名的科技出版集团。SpringerLink科研平台提供学术期刊及电子图书的在线服务。数据库收录的文献涵盖24个学科，包括生物医学、工商管理、化学、计算机科学、地球科学、经济学、教育、工程、环境、地理、历史、法律、生命科学、文学、材料科学、数学、医学与公共卫生、药剂学、哲学、物理、政治学与国际关系、<br>
+心理学、社会科学、统计。</p>
+</li>
+<li>
+<p>EBSCO数据库 <a href="http://search.epnet.com/">http://search.epnet.com/</a><br>
+EBSCO由Elton B. Stephens于1944年创立，是目前世界上最大的提供学术文献服务的专业公司之一，提供数据库、期刊、文献订购及出版等服务，总部在美国，在全球19个国家设有办事处。开发了200多个在线文献数据库产品，涉及自然科学、社会科学、生物医学、人文艺术等多学科领域。</p>
+</li>
+</ul>
+<h4 id="文摘数据库">文摘数据库 </h4>
+<ul>
+<li>EI 工程索引数据库 <a href="https://www.engineeringvillage.com/search/quick.url">https://www.engineeringvillage.com/search/quick.url</a><br>
+工程索引（Engineering Index，简称EI） 创刊于1884年，是美国工程信息公司编辑出版，现由Elsevier经营的著名工程技术类综合性检索工具。Ei Compendex 是EI的网络版，是目前全球最早最全面的工程领域的文摘数据<br>
+库，也是世界上鉴定评价科研人员、工程技术人员学术成果的权威性工具。Engineering Village平台集成了多个数据库，其中核心数据库为Ei Compendex，目前已完全包含在Scopus数据中。</li>
+<li>Web of Science数据库 <a href="https://www.webofscience.com/wos/">https://www.webofscience.com/wos/</a><br>
+查影响因子：<a href="https://jcr.clarivate.com/jcr/browse-journals">https://jcr.clarivate.com/jcr/browse-journals</a></li>
+</ul>
+<h4 id="学位论文库">学位论文库 </h4>
+<ul>
+<li>中国知网的《学位论文库》<a href="https://kns.cnki.net/kns8?dbcode=CDMD">https://kns.cnki.net/kns8?dbcode=CDMD</a></li>
+<li>万方《中国学位论文全文数据库》<a href="http://c.wanfangdata.com.cn/thesis">http://c.wanfangdata.com.cn/thesis</a></li>
+<li>CALIS 学位论文中心服务系统（文摘信息，文献传递）<br>
+✓ 检索入口： <a href="http://etd.calis.edu.cn">http://etd.calis.edu.cn</a></li>
+<li>国家科技图书文献中心（NSTL）的学位论文库（文摘信息，文献传递）<br>
+✓ 检索入口：<a href="http://www.nstl.gov.cn">http://www.nstl.gov.cn</a></li>
+<li>中国国家图书馆学位论文资源（文摘信息，文献传递）<br>
+✓ 资源入口： <a href="http://www.nlc.cn/dsb_zyyfw/lw/lwzyk/%EF%BC%88%E7%9F%A5%E7%BD%91%E3%80%81%E4%B8%87%E6%96%B9%E3%80%81PQDT%E7%AD%89%EF%BC%89">http://www.nlc.cn/dsb_zyyfw/lw/lwzyk/（知网、万方、PQDT等）</a><br>
+✓ 检索入口（博士论文）：<a href="http://read.nlc.cn/allSearch/searchList?searchType=65&amp;showType=1&amp;pageNo=1">http://read.nlc.cn/allSearch/searchList?searchType=65&amp;showType=1&amp;pageNo=1</a></li>
+<li>PQDT博硕论文全文库 <a href="https://www.proquest.com/">https://www.proquest.com/</a></li>
+</ul>
+<h2 id="专利检索">专利检索 </h2>
+<h3 id="商业数据库">商业数据库 </h3>
+<p>CNKI中国知网<br>
+◆ 1985年至今的中国专利；1970年至今的十国两组织及两地区专利<br>
+◆ <a href="https://kns.cnki.net/kns8?dbcode=SCOD">https://kns.cnki.net/kns8?dbcode=SCOD</a><br>
+万方数据（免费检索，未购买全文）<br>
+◆ 1985年至今的中国专利；1970年至今的十一国两组织及两地区专利<br>
+◆ <a href="https://c.wanfangdata.com.cn/patent">https://c.wanfangdata.com.cn/patent</a></p>
+<h3 id="专利局官网">专利局官网 </h3>
+<p>◆ 国家知识产权局网站 (&lt;<a href="http://www.cnipa.gov.cn/">www.cnipa.gov.cn/</a>&gt;)<br>
+1985年以来的全部中国专利；国外及港澳台专利，需要注册，方能检索和下载专利全文<br>
+◆ 欧洲专利局数据库 (<a href="http://worldwide.espacenet.com/">http://worldwide.espacenet.com/</a>)<br>
+◆ 美国专利和商标局专利数据库 (<a href="http://www.uspto.gov">http://www.uspto.gov</a>)<br>
+◆ 加拿大知识产权局网站 (<a href="http://www.ic.gc.ca/eic/site/cipointernet-internetopic.nsf/eng/Home">http://www.ic.gc.ca/eic/site/cipointernet-internetopic.nsf/eng/Home</a>)<br>
+◆ 日本专利局网站 (<a href="http://www.jpo.go.jp">http://www.jpo.go.jp</a>)<br>
+◆ 世界知识产权组织网站 (<a href="http://www.wipo.int/">http://www.wipo.int/</a>)</p>
+<h3 id="网络上其它免费的专利数据库">网络上其它免费的专利数据库 </h3>
+<p>◆专利之星检索系统（<a href="http://search.patentstar.xn--cn-ku3n">http://search.patentstar.cn）</a><br>
+1985年以来的中国专利，提供检索和分析功能，但分析功能需要费用，全球90多个重要国家的专利文献及相关信息，数据量超过8000万条。<br>
+◆国家重点产业专利信息服务平台（<a href="http://chinaip.cnipa.gov.cn/%EF%BC%89">http://chinaip.cnipa.gov.cn/）</a><br>
+平台共收录了美国、日本、英国、法国、世界知识产权局、欧洲专利局等国家、地区和组织的专利文献信息，全面涵盖了十大重点产业所涉及的专利文献。<br>
+◆SooPAT专利搜索引擎（<a href="http://www.soopat.xn--com-c16s">http://www.soopat.com）</a><br>
+1985年以来的中国专利（简单分析免费，高级分析收费），110个国家和地区、超过1亿6000万世界专利文献（收费）</p>
+<h2 id="会议论文">会议论文 </h2>
+<p>ACM美国计算机学会 <a href="http://dl.acm.org/">http://dl.acm.org/</a><br>
+中国学术会议网（<a href="http://conf.cnki.xn--net-6y3bm27nsbg4pf2tth7ak06awpb6ya53l0x4e67wd92nz795brao8c">http://conf.cnki.net）（最近召开会议征文，直播、回放）</a><br>
+香山科学会议网站（ &lt;<a href="http://www.xssc.ac.cn">www.xssc.ac.cn</a>）&gt;<br>
+高登研究会议网站（ <a href="http://www.grc.org%EF%BC%89(%E5%9B%BD%E9%99%85%E6%9C%80%E8%BF%91%E5%8F%AC%E5%BC%80%E4%BC%9A%E8%AE%AE%E5%BE%81%E6%96%87%EF%BC%89">http://www.grc.org）(国际最近召开会议征文）</a></p>
+<h2 id="标准文献的检索与利用">标准文献的检索与利用 </h2>
+<h3 id="中文标准及标准文献的检索">中文标准及标准文献的检索 </h3>
+<p>中国标准全文库（订购，全文） <a href="http://wfstandard.cup.edu.cn/">http://wfstandard.cup.edu.cn/</a><br>
+万方中外标准数据库（题录信息） <a href="https://c.wanfangdata.com.cn/standard">https://c.wanfangdata.com.cn/standard</a><br>
+CNKI标准数据总库（题录信息） <a href="https://kns.cnki.net/kns8?dbcode=CISD">https://kns.cnki.net/kns8?dbcode=CISD</a><br>
+国家科技图书文献中心标准数据库（题录，全文收费）<a href="http://www.nstl.gov.cn">http://www.nstl.gov.cn</a><br>
+工标网（题录，全文收费）<a href="http://www.csres.com/">http://www.csres.com/</a><br>
+学兔兔（原标准分享网）： <a href="http://www.bzfxw.com/">http://www.bzfxw.com/</a><br>
+国家标准全文公开系统：<a href="https://openstd.samr.gov.cn/bzgk/gb/index">https://openstd.samr.gov.cn/bzgk/gb/index</a></p>
+<h3 id="外文标准及标准文献的检索">外文标准及标准文献的检索 </h3>
+<p>IEL标准文献数据库（全文）<a href="http://ieeexplore.ieee.org/Xplore/dynhome.jsp">http://ieeexplore.ieee.org/Xplore/dynhome.jsp</a><br>
+国际标准化组织（ISO）（题录信息）<a href="http://www.iso.org">http://www.iso.org</a><br>
+国际电工委员会（IEC）（题录信息）<a href="http://www.iec.ch">http://www.iec.ch</a><br>
+Techstreet标准数据库（未订购，需购买）<a href="http://www.techstreet.com">http://www.techstreet.com</a><br>
+国家科技文献中心标准数据库（题录，文献传递）<a href="http://www.nstl.gov.cn">http://www.nstl.gov.cn</a></p>
+<h2 id="著录项">著录项 </h2>
+<p><img src="image-3.png" alt="Alt text"></p>
+<h2 id="统计数据">统计数据 </h2>
+<ul>
+<li>中国经济社会大数据研究平台 <a href="https://data.cnki.net/">https://data.cnki.net/</a></li>
+<li>国家统计局网站 <a href="http://data.stats.gov.cn/">http://data.stats.gov.cn/</a></li>
+<li>全球科研项目数据库 <a href="http://project.llas.ac.cn/">http://project.llas.ac.cn/</a></li>
+<li>百度指数（<a href="http://index.baidu.xn--com-c16s">http://index.baidu.com）</a></li>
+<li>联合国统计司（<a href="http://unstats.un.org/%EF%BC%89">http://unstats.un.org/）</a></li>
+<li>美国联邦储备局（FED）数据中心（<a href="http://www.federalreserve.gov/data.htm%EF%BC%89">http://www.federalreserve.gov/data.htm）</a></li>
+<li>世界贸易组织（WTO）统计数据（<a href="https://www.wto.org/index.htm%EF%BC%89">https://www.wto.org/index.htm）</a></li>
+<li>世界银行公开数据（<a href="https://databank.worldbank.org/%EF%BC%89">https://databank.worldbank.org/）</a></li>
+<li>国际货币基金组织（IMF）数据（<a href="http://data.imf.xn--org-c16s">http://data.imf.org）</a></li>
+</ul>
+<h2></h2>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

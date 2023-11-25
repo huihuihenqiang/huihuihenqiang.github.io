@@ -24,8 +24,16 @@ body {
     margin-bottom: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+    transition: transform 0.5s ease; /* 添加平移效果的过渡 */
   }
   
+
+  .python-section:hover {
+    background-color: rgb(249, 245, 230); /* Change background color on hover */
+    transform: scale(1.02); /* 在悬停时放大内容 */
+  }
+
   .section-title {
     font-size: 24px;
     color: #333;

@@ -3,7 +3,6 @@
 
 author: ZH  |  date: 2023-11-24   |   category: Git
 
----
 ![机器学习](../../img/git.jpg)
 
 ## 将本地仓库上传到Github(第一次使用)
@@ -44,7 +43,6 @@ cd /d/your/project/path
 ```git
 git init
 ```
-
 
 ### 提交并推送代码
 
@@ -97,6 +95,11 @@ git push
 4.Git的奇技淫巧        [GitHub 14.9k stars]<https://github.com/521xueweihan/git-tips>
 5.git-cheatsheeth      [图形化 Git 命令的作用域]<https://ndpsoftware.com/git-cheatsheet.html#loc=stas>
 
+### 如何解决可能出现的网络连接问题
+
+要设置代理什么的： <https://blog.csdn.net/m0_63230155/article/details/132070860>
+
+在本地仓库修改之前，先从云端 git pull 一下，同步。
 
 ---
 
