@@ -90,3 +90,7 @@ $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
 $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
 ```
+
+---
+
+[上一页](../Git/Git的使用技巧(一).html) | [下一页](../IR/信息检索.html) | [返回主页](../../index.html)
