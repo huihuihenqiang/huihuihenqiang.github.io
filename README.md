@@ -14,13 +14,13 @@
 
 | 工作 | 状态 | 资源 |
 | --- | --- | --- |
-| **MedEvoEval**：医生智能体的持续学习与演化评估 | NeurIPS 2026 E&D Track，Poster，已接收 | 论文 / arXiv：TODO；OpenReview：TODO；代码：TODO |
+| **MedEvoEval**：Evaluating Continual Evolution of Doctor Agents through Simulated Clinical Episodes | Hui Zhang · NeurIPS 2026 E&D Track，Poster，已接收 | [论文主页](https://huihuihenqiang.github.io/medevoeval/) · [arXiv](https://arxiv.org/abs/2606.28900) · [代码](https://github.com/huihuihenqiang/MedEvoEval) · [数据](https://www.kaggle.com/datasets/anonymousmedevoeval/medevoeval-anonymous-review-dataset) |
 
-TODO：补全最终正式论文题名、完整作者列表及顺序。上述中文文字为研究内容说明，不作为正式论文题名。
+
 
 ## 项目与学习笔记
 
-- **MedEvoEval 评估框架**：通过模拟门诊交互研究医生智能体的持续学习与演化评估。项目仓库：TODO。
+- **MedEvoEval 评估框架**：通过模拟门诊交互研究医生智能体的持续学习与演化评估。[项目仓库](https://github.com/huihuihenqiang/MedEvoEval)。
 - **机器学习与科研工具笔记**：[数学与统计基础](article/THPML%20book/math%20theroy%20of%20ML.html)、[Git](article/Git/Git的使用技巧(一).html)、[Markdown](article/Markdown/Markdown用法（一）.html)、[信息检索](article/IR/信息检索.html)。
 
 ## 常用链接
@@ -37,6 +37,7 @@ TODO：补全最终正式论文题名、完整作者列表及顺序。上述中�
 | --- | --- |
 | `Pages/index.html` | 学术主页正文与内嵌样式，单文件，无构建步骤 |
 | `index.html` | 网站根入口，跳转到 `Pages/index.html` |
+| `medevoeval/` | MedEvoEval 论文主页、资源链接及框架图 |
 | `article/` | 已有学习笔记与静态资源 |
 
 从仓库根目录运行 `python -m http.server 8000`，然后访问 `http://localhost:8000/`。主页不依赖外部 CSS、字体、图标库或 JavaScript；根入口使用短脚本跳转，并提供无 JavaScript 的跳转和手动链接。
@@ -47,6 +48,6 @@ TODO：补全最终正式论文题名、完整作者列表及顺序。上述中�
 内容依据（维护备注，不在渲染后的 README 中显示）：
 - 姓名、北京理工大学应用统计硕士、研究方向、MedEvoEval，以及 NeurIPS 2026 E&D Poster 接收状态来自已确认的对话上下文。
 - GitHub、CSDN、知乎及具体学习笔记路径来自现有仓库。
-- MedEvoEval 的正式英文题名、完整作者列表、Scholar/ORCID/OpenReview 个人链接、论文 URL 与独立代码仓库尚未确认，保留 TODO。
+- MedEvoEval 题名、作者与 arXiv 地址已核对；Scholar/ORCID/OpenReview 个人链接仍待提供。
 - 当前没有足够信息将具体 ICLR 或 AAAI 稿件列为接收论文；后续新增时，不能把进入审稿阶段写成录用。
 -->

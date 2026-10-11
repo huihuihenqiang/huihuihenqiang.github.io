@@ -1,0 +1,633 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@type": "sc:Dataset",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "name": "Chinese MedEvoEval-MedQA-700",
+  "description": "700 MedQA-derived simulated case records, 3103 simulated episode trajectories and 3386 selected process steps for MedEvoEval. Process utility uses the configured action budget as its turn divisor. Download locations identify the published data files.",
+  "version": "1.1.0",
+  "license": [
+    "https://opensource.org/license/mit",
+    "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  ],
+  "inLanguage": [
+    "zh"
+  ],
+  "isBasedOn": {
+    "@type": "prov:Entity",
+    "name": "MedQA",
+    "url": "https://github.com/jind11/MedQA",
+    "license": "https://opensource.org/license/mit"
+  },
+  "citation": "Di Jin et al. What Disease Does This Patient Have? A Large-Scale Open Domain Question Answering Dataset from Medical Exams. Applied Sciences 11(14):6421 (2021). doi:10.3390/app11146421.",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "chinese_medevoeval_medqa700.jsonl",
+      "name": "chinese_medevoeval_medqa700.jsonl",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fchinese_medevoeval_medqa700.jsonl?datasetVersionNumber=4",
+      "encodingFormat": "application/jsonlines",
+      "contentSize": "1931784 B",
+      "sha256": "8f93b047bf49241bb6b55704a74b8a544ca48b7abfd00ed8ce99328f5a684e82"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "chinese_medevoeval_process_trajectories.jsonl",
+      "name": "chinese_medevoeval_process_trajectories.jsonl",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fchinese_medevoeval_process_trajectories.jsonl?datasetVersionNumber=4",
+      "encodingFormat": "application/jsonlines",
+      "contentSize": "43942316 B",
+      "sha256": "a73771621e91f49efbc428b27dbd2445d7c99ae1947c7b556536a26130e6d67d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "chinese_medevoeval_process_steps.jsonl",
+      "name": "chinese_medevoeval_process_steps.jsonl",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fchinese_medevoeval_process_steps.jsonl?datasetVersionNumber=4",
+      "encodingFormat": "application/jsonlines",
+      "contentSize": "7661085 B",
+      "sha256": "b405471fdd5c90bb3f08f34ad85d8bacc48348bd1376d16e830e25d36bbbc8fb"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "case_scenario_map.csv",
+      "name": "case_scenario_map.csv",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fcase_scenario_map.csv?datasetVersionNumber=4",
+      "encodingFormat": "text/csv",
+      "contentSize": "93387 B",
+      "sha256": "7047dcc5dab40afd8dd0e761e93254d6bd643608b436546f595dc5228a11ee00"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "split_manifest.csv",
+      "name": "split_manifest.csv",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fsplit_manifest.csv?datasetVersionNumber=4",
+      "encodingFormat": "text/csv",
+      "contentSize": "315 B",
+      "sha256": "6df62f746c1507c76ff32b76910dd26350370b4ec1ebca51b0159cc80882e82a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "process_utility.csv",
+      "name": "process_utility.csv",
+      "description": "Per-trajectory utility and action budget, linked by trajectory_id.",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fprocess_utility.csv?datasetVersionNumber=4",
+      "encodingFormat": "text/csv",
+      "sha256": "0afde4f6fbf1a8edb2b89c2d34089a54cbde48754936bf65292def5af542ff71",
+      "contentSize": "356233 B"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "cases",
+      "name": "cases",
+      "description": "Structured scalar fields from each original JSONL record; nested fields remain in the unchanged distribution file and are documented in FIELDS.md and schemas/.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "cases/case_id",
+          "name": "case_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_medqa700.jsonl"
+            },
+            "extract": {
+              "column": "case_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cases/task",
+          "name": "task",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_medqa700.jsonl"
+            },
+            "extract": {
+              "column": "task"
+            }
+          }
+        }
+      ],
+      "key": {
+        "@id": "cases/case_id"
+      }
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "process_trajectories",
+      "name": "process_trajectories",
+      "description": "Structured scalar fields from each original JSONL record; nested fields remain in the unchanged distribution file and are documented in FIELDS.md and schemas/.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "process_trajectories/record_type",
+          "name": "record_type",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_trajectories.jsonl"
+            },
+            "extract": {
+              "column": "record_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_trajectories/trajectory_id",
+          "name": "trajectory_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_trajectories.jsonl"
+            },
+            "extract": {
+              "column": "trajectory_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_trajectories/source_run_id",
+          "name": "source_run_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_trajectories.jsonl"
+            },
+            "extract": {
+              "column": "source_run_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_trajectories/release_case_id",
+          "name": "release_case_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_trajectories.jsonl"
+            },
+            "extract": {
+              "column": "release_case_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_trajectories/original_case_id",
+          "name": "original_case_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_trajectories.jsonl"
+            },
+            "extract": {
+              "column": "original_case_id"
+            }
+          }
+        }
+      ],
+      "key": {
+        "@id": "process_trajectories/trajectory_id"
+      }
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "process_steps",
+      "name": "process_steps",
+      "description": "Structured scalar fields from each original JSONL record; nested fields remain in the unchanged distribution file and are documented in FIELDS.md and schemas/.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/record_type",
+          "name": "record_type",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "record_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/step_id",
+          "name": "step_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "step_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/trajectory_id",
+          "name": "trajectory_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "trajectory_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/source_run_id",
+          "name": "source_run_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "source_run_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/release_case_id",
+          "name": "release_case_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "release_case_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/target_action",
+          "name": "target_action",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "target_action"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/target_text",
+          "name": "target_text",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "target_text"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/target_test_name",
+          "name": "target_test_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "target_test_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_steps/trajectory_score",
+          "name": "trajectory_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "chinese_medevoeval_process_steps.jsonl"
+            },
+            "extract": {
+              "column": "trajectory_score"
+            }
+          }
+        }
+      ],
+      "key": {
+        "@id": "process_steps/step_id"
+      }
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "case_index",
+      "name": "case_index",
+      "description": "Explicit release-to-engine mapping and duplicate markers.",
+      "key": {
+        "@id": "case_index/scenario_id"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "case_index/scenario_id",
+          "name": "scenario_id",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "case_scenario_map.csv"
+            },
+            "extract": {
+              "column": "scenario_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "case_index/release_case_id",
+          "name": "release_case_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "case_scenario_map.csv"
+            },
+            "extract": {
+              "column": "release_case_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "case_index/primary_split",
+          "name": "primary_split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "case_scenario_map.csv"
+            },
+            "extract": {
+              "column": "primary_split"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "case_index/content_sha256",
+          "name": "content_sha256",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "case_scenario_map.csv"
+            },
+            "extract": {
+              "column": "content_sha256"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "case_index/duplicate_group",
+          "name": "duplicate_group",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "case_scenario_map.csv"
+            },
+            "extract": {
+              "column": "duplicate_group"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "case_index/duplicate_group_size",
+          "name": "duplicate_group_size",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "case_scenario_map.csv"
+            },
+            "extract": {
+              "column": "duplicate_group_size"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "process_utility",
+      "name": "process_utility",
+      "description": "Utility and configured budget for 3103 trajectories, joined by trajectory_id.",
+      "key": {
+        "@id": "process_utility/trajectory_id"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "process_utility/trajectory_id",
+          "name": "trajectory_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "process_utility.csv"
+            },
+            "extract": {
+              "column": "trajectory_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_utility/source_run_id",
+          "name": "source_run_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "process_utility.csv"
+            },
+            "extract": {
+              "column": "source_run_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_utility/release_case_id",
+          "name": "release_case_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "process_utility.csv"
+            },
+            "extract": {
+              "column": "release_case_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_utility/configured_budget",
+          "name": "configured_budget",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "process_utility.csv"
+            },
+            "extract": {
+              "column": "configured_budget"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_utility/turn_divisor",
+          "name": "turn_divisor",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "process_utility.csv"
+            },
+            "extract": {
+              "column": "turn_divisor"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "process_utility/utility",
+          "name": "utility",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "process_utility.csv"
+            },
+            "extract": {
+              "column": "utility"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "rai:dataLimitations": "The stream contains 500 records and the held-out split contains 200. Twelve content pairs repeat within the stream; content fingerprints and subset mappings are provided. Process records are simulated model outputs and steps are selected subsets. Paper experiment statistics are supplied in the companion code package results directory. Provider terms apply to model-output reuse. This dataset is for research evaluation, not patient care.",
+  "rai:hasSyntheticData": true,
+  "rai:dataBiases": "The 700 records are a selected Chinese-language MedQA-derived exam-vignette collection, not a representative sample of patients, populations, languages or medical specialties. Selection, translation/adaptation and model-generation or scoring errors may bias the task distribution and labels. Demographic representativeness and subgroup fairness have not been established. There are 688 distinct content fingerprints and 12 duplicate pairs, all within the 500-record stream (488 distinct cases); the 200 held-out records are distinct with no content overlap with the stream. The first-100 cross-study subset and first-80 model-comparison subset reuse stream records. E0-E3 repeatedly expose the same stream, so those rounds are not independent samples or evidence of generalization to new cases.",
+  "rai:personalSensitiveInformation": "Case views contain vignette-level demographic and health attributes such as age, sex, symptoms, medical history, test findings and diagnoses. These are transformed medical-exam vignettes and simulated model interactions, not newly collected real-patient records or expert clinical demonstrations. No credentialed MIMIC or NEJM source corpus is included. Sanitized process records retain selected research fields; this metadata does not claim that sanitization constitutes a comprehensive clinical de-identification audit. Inspect the released content and applicable source/provider terms before redistribution or downstream reuse.",
+  "rai:dataUseCases": "Intended for research evaluation of simulated multi-agent diagnostic episodes: role-specific information access, valid actions and observations, resource use, rubric-based outcomes, and retrieval/writeback of cross-episode memory under the reported protocol. Case-conversion review and physician scoring audits cover subsets described in the companion paper; they do not turn every case or process label into an independently validated expert annotation. The held-out comparison, repeated-stream analysis and reused cross/model-comparison subsets must be interpreted separately. Clinical deployment, patient-care decisions, representative epidemiology and unrestricted training reuse are not established uses; model-output terms have not been independently cleared for unrestricted downstream training.",
+  "rai:dataSocialImpact": "The intended benefit is inspectable and reproducible research on diagnostic-agent behavior, process errors and resource use in a simulator. Potential harms include propagating incorrect generated medical content, overstating clinical validity or subgroup fairness, and treating repeated or selected records as independent evidence. Mitigations in this release include explicit simulated-data labeling, role-separated views, retained source/run provenance, content fingerprints and split manifests, disclosure of subset reuse and limitations, and keeping research evaluation separate from clinical use. These measures do not establish patient safety or resolve model-provider output permissions.",
+  "prov:wasDerivedFrom": [
+    {
+      "@id": "https://github.com/jind11/MedQA",
+      "@type": "prov:Entity",
+      "name": "MedQA",
+      "description": "Upstream medical-exam question-answer source. This package selects 700 transformed Chinese-language records whose retained source metadata identify rows 1-700 of the local MedQA-derived case file and its source fingerprint. Upstream MIT attribution is preserved in LICENSE_MedQA.txt."
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@id": "#case-preparation",
+      "@type": "prov:Activity",
+      "name": "MedQA-derived simulated case preparation",
+      "description": "MedQA exam content was adapted into structured simulated cases with patient_view, exam_view and manager_view fields and retained source metadata. The camera-ready release preserves 700 source-selected records, maps zero-based scenario IDs 0-699 to release IDs case_001-case_700, and assigns scenarios 0-499 to the repeated stream and 500-699 to held-out evaluation. It does not add NEJM or credentialed MIMIC records. The companion paper describes the limited case-conversion review; complete per-case physician annotations are not provided for all 700 records.",
+      "prov:used": [
+        {
+          "@id": "https://github.com/jind11/MedQA"
+        }
+      ]
+    },
+    {
+      "@id": "#episode-simulation-and-release-selection",
+      "@type": "prov:Activity",
+      "name": "Simulated episode generation and selected process-record release",
+      "description": "Role-separated diagnostic-agent episodes were selected into 3103 trajectories and 3386 linked steps. Scores are model-generated; physician audits cover the subsets described in the paper. Utility uses the configured action budget as its turn-cost divisor.",
+      "prov:used": [
+        {
+          "@id": "chinese_medevoeval_medqa700.jsonl"
+        }
+      ]
+    },
+    {
+      "@id": "#release-content-audit",
+      "@type": "prov:Activity",
+      "name": "Local release mapping and content-fingerprint audit",
+      "description": "The release audit recomputes SHA-256 fingerprints from task, patient_view, exam_view and manager_view with sorted JSON keys, UTF-8 and compact separators, excluding IDs and source metadata. It preserves all records, marks 12 duplicate pairs, checks the 500/200 split and absence of stream/held-out content overlap, and checks actual JSONL counts, relative file references and distribution hashes. This is an offline integrity check, not a new clinical validation or a remote Croissant-loading test.",
+      "prov:used": [
+        {
+          "@id": "chinese_medevoeval_medqa700.jsonl"
+        },
+        {
+          "@id": "chinese_medevoeval_process_trajectories.jsonl"
+        },
+        {
+          "@id": "chinese_medevoeval_process_steps.jsonl"
+        }
+      ]
+    }
+  ],
+  "citeAs": "MedEvoEval: Evaluating Continual Evolution of Doctor Agents through Simulated Clinical Episodes. Dataset.",
+  "url": "https://www.kaggle.com/datasets/anonymousmedevoeval/medevoeval-anonymous-review-dataset",
+  "datePublished": "2026-10-11"
+}
