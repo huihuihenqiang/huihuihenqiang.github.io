@@ -51,7 +51,7 @@
   "conformsTo": "http://mlcommons.org/croissant/1.0",
   "name": "Chinese MedEvoEval-MedQA-700",
   "description": "700 MedQA-derived simulated case records, 3103 simulated episode trajectories and 3386 selected process steps for MedEvoEval. Process utility uses the configured action budget as its turn divisor. Download locations identify the published data files.",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "license": [
     "https://opensource.org/license/mit",
     "https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -71,7 +71,7 @@
       "@type": "cr:FileObject",
       "@id": "chinese_medevoeval_medqa700.jsonl",
       "name": "chinese_medevoeval_medqa700.jsonl",
-      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fchinese_medevoeval_medqa700.jsonl?datasetVersionNumber=4",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2Fchinese_medevoeval_medqa700.jsonl?datasetVersionNumber=5",
       "encodingFormat": "application/jsonlines",
       "contentSize": "1931784 B",
       "sha256": "8f93b047bf49241bb6b55704a74b8a544ca48b7abfd00ed8ce99328f5a684e82"
@@ -80,7 +80,7 @@
       "@type": "cr:FileObject",
       "@id": "chinese_medevoeval_process_trajectories.jsonl",
       "name": "chinese_medevoeval_process_trajectories.jsonl",
-      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fchinese_medevoeval_process_trajectories.jsonl?datasetVersionNumber=4",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2Fchinese_medevoeval_process_trajectories.jsonl?datasetVersionNumber=5",
       "encodingFormat": "application/jsonlines",
       "contentSize": "43942316 B",
       "sha256": "a73771621e91f49efbc428b27dbd2445d7c99ae1947c7b556536a26130e6d67d"
@@ -89,7 +89,7 @@
       "@type": "cr:FileObject",
       "@id": "chinese_medevoeval_process_steps.jsonl",
       "name": "chinese_medevoeval_process_steps.jsonl",
-      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fchinese_medevoeval_process_steps.jsonl?datasetVersionNumber=4",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2Fchinese_medevoeval_process_steps.jsonl?datasetVersionNumber=5",
       "encodingFormat": "application/jsonlines",
       "contentSize": "7661085 B",
       "sha256": "b405471fdd5c90bb3f08f34ad85d8bacc48348bd1376d16e830e25d36bbbc8fb"
@@ -98,7 +98,7 @@
       "@type": "cr:FileObject",
       "@id": "case_scenario_map.csv",
       "name": "case_scenario_map.csv",
-      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fcase_scenario_map.csv?datasetVersionNumber=4",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2Fcase_scenario_map.csv?datasetVersionNumber=5",
       "encodingFormat": "text/csv",
       "contentSize": "93387 B",
       "sha256": "7047dcc5dab40afd8dd0e761e93254d6bd643608b436546f595dc5228a11ee00"
@@ -107,7 +107,7 @@
       "@type": "cr:FileObject",
       "@id": "split_manifest.csv",
       "name": "split_manifest.csv",
-      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fsplit_manifest.csv?datasetVersionNumber=4",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2Fsplit_manifest.csv?datasetVersionNumber=5",
       "encodingFormat": "text/csv",
       "contentSize": "315 B",
       "sha256": "6df62f746c1507c76ff32b76910dd26350370b4ec1ebca51b0159cc80882e82a"
@@ -117,7 +117,7 @@
       "@id": "process_utility.csv",
       "name": "process_utility.csv",
       "description": "Per-trajectory utility and action budget, linked by trajectory_id.",
-      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2FMedEvoEval_data%2Fprocess_utility.csv?datasetVersionNumber=4",
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/anonymousmedevoeval/medevoeval-anonymous-review-dataset/MedEvoEval_data%2Fprocess_utility.csv?datasetVersionNumber=5",
       "encodingFormat": "text/csv",
       "sha256": "0afde4f6fbf1a8edb2b89c2d34089a54cbde48754936bf65292def5af542ff71",
       "contentSize": "356233 B"
