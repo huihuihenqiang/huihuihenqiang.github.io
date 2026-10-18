@@ -9,9 +9,9 @@ Research in language-model agents, continual learning, and statistical evaluatio
 ## Publications
 
 - MedEvoEval — NeurIPS 2026, Evaluations & Datasets Track (Poster).
-- Learning When to Trust Medical Knowledge — [preprint](https://arxiv.org/abs/2610.19663).
-- DramaGrow — [named-author manuscript](https://github.com/huihuihenqiang/DramaGrow).
-- Pay for the Difference — [ICLR submission, under review](https://openreview.net/forum?id=q4xqxqrwhG).
+- Learning When to Trust Medical Knowledge — [AAAI submission, under review](https://arxiv.org/abs/2610.19663).
+- DramaGrow — [AAAI submission, under review](https://github.com/huihuihenqiang/DramaGrow).
+- Pay for the Difference — [ICLR submission, under review](https://github.com/huihuihenqiang/CAFA).
 - A novel composite of Closed-Cell aluminum foam and Phase-Change material for enhanced mechanical safety in EV battery systems — [Composite Structures, 2025](https://doi.org/10.1016/j.compstruct.2025.119504).
 
 ## Maintenance
