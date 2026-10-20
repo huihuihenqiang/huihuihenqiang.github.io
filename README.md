@@ -17,3 +17,7 @@ Research in language-model agents, continual learning, and statistical evaluatio
 ## Maintenance
 
 The personal homepage is `Pages/index.html`; the root entry redirects to it. Keep publication metadata synchronized with this README. Blog links point to existing notes. Project pages are maintained separately.
+
+## Homepage presentation
+
+The homepage uses compact publication rows with paper thumbnails, profile links beside the biography, and a collapsible Chinese biography. The BIT emblem is sourced from the [official university culture page](https://www.bit.edu.cn/gbxxgk/dqgz_sjb/a173964.htm) and is used to identify the listed education.
