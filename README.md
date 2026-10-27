@@ -14,6 +14,10 @@ Research in language-model agents, continual learning, and statistical evaluatio
 - Pay for the Difference — [ICLR submission, under review](https://github.com/huihuihenqiang/CAFA).
 - A novel composite of Closed-Cell aluminum foam and Phase-Change material for enhanced mechanical safety in EV battery systems — [Composite Structures, 2025](https://doi.org/10.1016/j.compstruct.2025.119504).
 
+## Projects
+
+- [Ultrasound Robot: Interactive 3D Demo](https://huihuihenqiang.github.io/projects/ultrasound-robot/) — a standalone interactive demonstration of a conceptual ultrasound-assisted robot, its components, probe motion, and target recovery.
+
 ## Maintenance
 
 The personal homepage is `Pages/index.html`; the root entry redirects to it. Keep publication metadata synchronized with this README. Blog links point to existing notes. Project pages are maintained separately.
