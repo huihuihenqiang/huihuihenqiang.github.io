@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>IAOM: Identity-Adapted Object Memory for Sparse-View Object Retrieval</title>
+  <meta name="description" content="IAOM retrieves the same physical object in a specified later RGB image. It combines identity-adapted object memory with local correspondences to rank target detections.">
+  <link rel="canonical" href="https://huihuihenqiang.github.io/iaom/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IAOM: Identity-Adapted Object Memory for Sparse-View Object Retrieval">
+  <meta property="og:description" content="IAOM retrieves the same physical object in a specified later RGB image. It combines identity-adapted object memory with local correspondences to rank target detections.">
+  <meta property="og:url" content="https://huihuihenqiang.github.io/iaom/">
+  <meta property="og:image" content="https://huihuihenqiang.github.io/iaom/assets/framework.webp">
+  <meta name="citation_title" content="IAOM: Identity-Adapted Object Memory for Sparse-View Object Retrieval">
+  <meta name="citation_author" content="Rui Qian">
+  <meta name="citation_author_institution" content="Fudan University">
+  <meta name="citation_author" content="Hui Zhang">
+  <meta name="citation_author_institution" content="Beijing Institute of Technology">
+  <meta name="citation_author" content="Yuanchao Zhu">
+  <meta name="citation_author_institution" content="University of Electronic Science and Technology of China">
+  <meta name="citation_author" content="Jun He">
+  <meta name="citation_author_institution" content="Beijing Technology and Business University">
+  <meta name="citation_author" content="Bicheng Deng">
+  <meta name="citation_author_institution" content="Fudan University">
+  <meta name="citation_author" content="Haijiang Li">
+  <meta name="citation_author_institution" content="Nanjing University of Science and Technology">
+  <meta name="citation_author" content="Chenziao">
+  <meta name="citation_author_institution" content="Peking Union Medical College">
+  <meta name="citation_author" content="Yuhe Wu">
+  <meta name="citation_author_institution" content="The Hong Kong University of Science and Technology">
+  <meta name="citation_author" content="Yingbo Zhou">
+  <meta name="citation_author_institution" content="Fudan University">
+  <style>
+    :root {
+      --ink: #172835;
+      --muted: #4a5c69;
+      --accent: #235a80;
+      --line: #dbe4eb;
+      --pale: #f2f7fb;
+      --paper: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 1.0625rem/1.65 "Segoe UI", system-ui, sans-serif;
+    }
+    a { color: var(--accent); text-underline-offset: 0.2em; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .skip { position: absolute; left: 1rem; top: -10rem; background: var(--paper); }
+    .skip:focus { top: 1rem; }
+    .wrap { max-width: 1080px; margin-inline: auto; padding: 0 clamp(1rem, 4vw, 2.25rem); }
+    .back { display: inline-block; margin-top: 1.5rem; font-size: 0.9375rem; }
+    header { padding: clamp(1.8rem, 5vw, 3.5rem) 0 2.5rem; text-align: center; }
+    h1, h2, p { margin: 0; }
+    h1 {
+      font-size: clamp(1.65rem, 4vw, 2.7rem);
+      line-height: 1.16;
+      letter-spacing: -0.028em;
+      max-width: 840px;
+      margin: 0 auto 1.35rem;
+      text-wrap: balance;
+    }
+    .acronym { display: block; font-size: clamp(2.4rem, 6vw, 3.8rem); color: var(--accent); margin-bottom: 0.25rem; }
+    h2 { font-size: clamp(1.325rem, 2.4vw, 1.65rem); line-height: 1.25; margin-bottom: 0.9rem; }
+    .authors, .affiliations, .resources {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    .authors, .affiliations { list-style: none; }
+    .authors { gap: 0.15rem 0.9rem; font-weight: 600; }
+    .authors li { white-space: nowrap; }
+    .authors sup, .affiliations sup { color: var(--accent); font-size: 0.72em; }
+    .affiliations { gap: 0.15rem 1rem; margin: 0.5rem auto 0; max-width: 860px; color: var(--muted); font-size: 0.9375rem; }
+    .venue { color: var(--muted); margin: 0.85rem 0 1rem; font-size: 0.9375rem; }
+    .resources { gap: 0.6rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9375rem;
+      font-weight: 600;
+    }
+    .button:hover { background: var(--pale); }
+    .button.primary { color: var(--paper); background: var(--accent); }
+    .button.primary:hover { background: #174764; }
+    section { border-top: 1px solid var(--line); padding: clamp(1.45rem, 4vw, 2.15rem) 0; }
+    .reading { max-width: 780px; margin-inline: auto; }
+    figure { margin: 0; }
+    figure img, video { display: block; width: 100%; height: auto; }
+    video { background: #152125; border-radius: 6px; }
+    figcaption { max-width: 780px; margin: 0.65rem auto 0; color: var(--muted); font-size: 0.9375rem; }
+    .interactive-description { margin: 1rem auto 0; }
+    .interactive-description a { white-space: normal; }
+    footer { border-top: 1px solid var(--line); padding: 1.4rem 0 2.1rem; font-size: 0.9375rem; }
+    @media (max-width: 550px) {
+      body { font-size: 1rem; }
+      .authors { gap: 0.15rem 0.7rem; }
+      .affiliations { gap: 0.08rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="wrap">
+    <a class="back" href="../Pages/">Hui Zhang · Academic homepage</a>
+    <header>
+      <h1><span class="acronym">IAOM</span>Identity-Adapted Object Memory for Sparse-View Object Retrieval</h1>
+      <ul class="authors" aria-label="Authors" role="list">
+        <li>Rui Qian<sup>1</sup></li>
+        <li>Hui Zhang<sup>2</sup></li>
+        <li>Yuanchao Zhu<sup>3</sup></li>
+        <li>Jun He<sup>4</sup></li>
+        <li>Bicheng Deng<sup>1</sup></li>
+        <li>Haijiang Li<sup>5</sup></li>
+        <li>Chenziao<sup>6</sup></li>
+        <li>Yuhe Wu<sup>7</sup></li>
+        <li>Yingbo Zhou<sup>1</sup></li>
+      </ul>
+      <ul class="affiliations" aria-label="Affiliations" role="list">
+        <li><sup>1</sup> Fudan University</li>
+        <li><sup>2</sup> Beijing Institute of Technology</li>
+        <li><sup>3</sup> University of Electronic Science and Technology of China</li>
+        <li><sup>4</sup> Beijing Technology and Business University</li>
+        <li><sup>5</sup> Nanjing University of Science and Technology</li>
+        <li><sup>6</sup> Peking Union Medical College</li>
+        <li><sup>7</sup> The Hong Kong University of Science and Technology</li>
+      </ul>
+      <p class="venue">Preprint</p>
+      <nav class="resources" aria-label="Project resources">
+        <a class="button" href="#demo">Video</a>
+        <a class="button primary" href="demo/IAOM_demo.html">Interactive demo</a>
+        <a class="button" href="https://github.com/huihuihenqiang/IAOM">Code (coming soon)</a>
+      </nav>
+    </header>
+    <main id="content">
+      <section aria-labelledby="method-title">
+        <h2 id="method-title">Method overview</h2>
+        <figure>
+          <a href="assets/framework.webp" aria-label="Open the full-size IAOM framework figure">
+            <img src="assets/framework.webp" width="2200" height="1067" alt="IAOM framework showing identity adaptation, online object memory, and query-conditioned retrieval.">
+          </a>
+          <figcaption>IAOM adapts instance descriptors, updates an online object memory, and uses region-level matches to select the target box.</figcaption>
+        </figure>
+      </section>
+      <section id="demo" aria-labelledby="demo-title">
+        <h2 id="demo-title">Video and interactive demo</h2>
+        <figure>
+          <video controls playsinline preload="none" poster="assets/armchairs-poster.jpg" width="1920" height="1080" aria-label="85-second IAOM armchair demonstration">
+            <source src="demo/IAOM_twin_armchairs_85s.mp4" type="video/mp4">
+            <a href="demo/IAOM_twin_armchairs_85s.mp4">Open the 85-second video</a>
+          </video>
+          <figcaption>The animation follows a book delivery to one of two similar armchairs. The closing segment shows a recorded 3RScan retrieval comparison.</figcaption>
+        </figure>
+        <p class="reading interactive-description">
+          <a href="demo/IAOM_demo.html">Open the interactive demo</a> to browse recorded queries, compare retrieval outputs, and step through IAOM’s memory and retrieval pipeline.
+        </p>
+      </section>
+      <section class="reading" id="abstract" aria-labelledby="abstract-title">
+        <h2 id="abstract-title">Abstract</h2>
+        <p>We study object retrieval from sparse RGB observations. Given an object marked by a bounding box in an earlier image, the task is to locate that object in a specified later image. Large viewpoint changes and similar-looking objects make cross-view matching difficult. Overlapping detections create an additional ambiguity when a region resembles the query but covers only part of the object. We propose Identity-Adapted Object Memory (IAOM), which combines cross-view instance association with query-conditioned candidate ranking. An Identity Encoding Adapter learns instance-discriminative features and uses them to associate detections with entries in an online object memory. A retrieval head then scores target detections using appearance similarity, memory assignments, predicted geometry, and comparisons among overlapping boxes. Local feature correspondences within predicted object masks provide additional evidence for selecting the correct box. Three separately trained models rank the candidates, and their mean probability for each model&#x27;s top candidate determines whether to return it. On the 20-room 3RScan test set, the complete system obtains 68.07% retrieval F1. In controlled ablations with single-fit acceptance, adding local correspondence to the otherwise matched retrieval head improves F1 by 4.24 percentage points, with a room-paired 95% interval of [1.54,7.56], while increasing correct returns and reducing false positives. On MSG/ARKitScenes, the single-fit model trained and calibrated on the source data achieves 64.92% F1. These results show how local correspondence complements appearance, memory, and geometry when choosing among candidate regions.</p>
+      </section>
+    </main>
+    <footer class="reading"><a href="../Pages/">Hui Zhang’s academic homepage</a></footer>
+  </div>
+</body>
+</html>
