@@ -46,6 +46,7 @@
     header { text-align: center; padding: 36px 0 20px; }
     h1, h2, p, figure { margin: 0; }
     h1 { font: 400 clamp(32px, 6vw, 50px)/1.12 "Varela Round", "Open Sans", sans-serif; }
+    .query-mark { display: inline-block; width: .72em; height: .72em; margin-inline-end: .23em; vertical-align: .02em; }
     .subtitle { margin: 4px auto 18px; font-size: clamp(19px, 3vw, 25px); line-height: 1.35; text-wrap: balance; }
     .authors, .affiliations { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; padding: 0; margin: 0; }
     .authors { gap: 2px 13px; font-size: 17px; }
@@ -80,7 +81,7 @@
 <body>
   <div class="page">
     <header>
-      <h1>IAOM</h1>
+      <h1><svg class="query-mark" viewBox="0 0 28 28" fill="none" stroke="#ef852f" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><path d="M10 3H3v7m15-7h7v7M3 18v7h7m15-7v7h-7"/></svg>IAOM</h1>
       <p class="subtitle">Identity-Adapted Object Memory for Sparse-View Object Retrieval</p>
       <ul class="authors" aria-label="Authors" role="list">
         <li>Rui Qian<sup>1,*</sup></li>
