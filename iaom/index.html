@@ -31,91 +31,57 @@
   <meta name="citation_author_institution" content="The Hong Kong University of Science and Technology">
   <meta name="citation_author" content="Yingbo Zhou">
   <meta name="citation_author_institution" content="Fudan University">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Varela+Round&amp;display=swap">
   <style>
-    :root {
-      --ink: #172835;
-      --muted: #4a5c69;
-      --accent: #235a80;
-      --line: #dbe4eb;
-      --pale: #f2f7fb;
-      --paper: #fff;
-    }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font: 1.0625rem/1.65 "Segoe UI", system-ui, sans-serif;
-    }
-    a { color: var(--accent); text-underline-offset: 0.2em; }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-    .skip { position: absolute; left: 1rem; top: -10rem; background: var(--paper); }
-    .skip:focus { top: 1rem; }
-    .wrap { max-width: 1080px; margin-inline: auto; padding: 0 clamp(1rem, 4vw, 2.25rem); }
-    .back { display: inline-block; margin-top: 1.5rem; font-size: 0.9375rem; }
-    header { padding: clamp(1.8rem, 5vw, 3.5rem) 0 2.5rem; text-align: center; }
-    h1, h2, p { margin: 0; }
-    h1 {
-      font-size: clamp(1.65rem, 4vw, 2.7rem);
-      line-height: 1.16;
-      letter-spacing: -0.028em;
-      max-width: 840px;
-      margin: 0 auto 1.35rem;
-      text-wrap: balance;
-    }
-    .acronym { display: block; font-size: clamp(2.4rem, 6vw, 3.8rem); color: var(--accent); margin-bottom: 0.25rem; }
-    h2 { font-size: clamp(1.325rem, 2.4vw, 1.65rem); line-height: 1.25; margin-bottom: 0.9rem; }
-    .authors, .affiliations, .resources {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
-    .authors, .affiliations { list-style: none; }
-    .authors { gap: 0.15rem 0.9rem; font-weight: 600; }
+    html { color-scheme: light; }
+    body { margin: 0; background: #fff; color: #292929; font: 16px/1.65 "Open Sans", Arial, sans-serif; }
+    .page { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+    a { color: #245a91; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid #245a91; outline-offset: 4px; }
+    header { text-align: center; padding: 36px 0 20px; }
+    h1, h2, p, figure { margin: 0; }
+    h1 { font: 400 clamp(32px, 6vw, 50px)/1.12 "Varela Round", "Open Sans", sans-serif; }
+    .subtitle { margin: 4px auto 18px; font-size: clamp(19px, 3vw, 25px); line-height: 1.35; text-wrap: balance; }
+    .authors, .affiliations { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; padding: 0; margin: 0; }
+    .authors { gap: 2px 13px; font-size: 17px; }
     .authors li { white-space: nowrap; }
-    .authors sup, .affiliations sup { color: var(--accent); font-size: 0.72em; }
-    .affiliations { gap: 0.15rem 1rem; margin: 0.5rem auto 0; max-width: 860px; color: var(--muted); font-size: 0.9375rem; }
-    .venue { color: var(--muted); margin: 0.85rem 0 1rem; font-size: 0.9375rem; }
-    .resources { gap: 0.6rem; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0.4rem 1rem;
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9375rem;
-      font-weight: 600;
-    }
-    .button:hover { background: var(--pale); }
-    .button.primary { color: var(--paper); background: var(--accent); }
-    .button.primary:hover { background: #174764; }
-    section { border-top: 1px solid var(--line); padding: clamp(1.45rem, 4vw, 2.15rem) 0; }
-    .reading { max-width: 780px; margin-inline: auto; }
-    figure { margin: 0; }
-    figure img, video { display: block; width: 100%; height: auto; }
-    video { background: #152125; border-radius: 6px; }
-    figcaption { max-width: 780px; margin: 0.65rem auto 0; color: var(--muted); font-size: 0.9375rem; }
-    .interactive-description { margin: 1rem auto 0; }
-    .interactive-description a { white-space: normal; }
-    footer { border-top: 1px solid var(--line); padding: 1.4rem 0 2.1rem; font-size: 0.9375rem; }
-    @media (max-width: 550px) {
-      body { font-size: 1rem; }
-      .authors { gap: 0.15rem 0.7rem; }
-      .affiliations { gap: 0.08rem 0.75rem; }
+    sup { font-size: .7em; }
+    .affiliations { gap: 0 13px; margin: 5px auto 0; max-width: 780px; color: #545454; font-size: 14px; }
+    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 19px; margin: 14px 0 0; font-size: 15px; }
+    main { display: grid; gap: 36px; }
+    section { min-width: 0; scroll-margin-top: 16px; }
+    h2 { text-align: center; font-size: clamp(22px, 3.1vw, 27px); font-weight: 600; margin-bottom: 10px; }
+    video, figure img, iframe { display: block; width: 100%; }
+    video, figure img { height: auto; }
+    video { background: #1e2220; }
+    figcaption, .explanation, details { max-width: 760px; margin: 9px auto 0; }
+    figcaption, .explanation { font-size: 14px; color: #454545; }
+    iframe { border: 0; min-height: 240px; }
+    details { font-size: 14px; }
+    details summary { width: fit-content; cursor: pointer; }
+    details p { margin: 8px 0 0; }
+    pre { margin: 0; padding: 14px 16px; background: #f7f7f7; font-size: 13px; overflow-x: auto; }
+    footer { margin: 26px 0 22px; font-size: 13px; text-align: center; }
+    @media (max-width: 540px) {
+      .page { padding-inline: 14px; }
+      header { padding-top: 26px; }
+      .authors { font-size: 15px; }
+      .affiliations { font-size: 13px; }
+      main { gap: 27px; }
     }
   </style>
 </head>
+
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-  <div class="wrap">
-    <a class="back" href="../Pages/">Hui Zhang · Academic homepage</a>
+  <div class="page">
     <header>
-      <h1><span class="acronym">IAOM</span>Identity-Adapted Object Memory for Sparse-View Object Retrieval</h1>
+      <h1>IAOM</h1>
+      <p class="subtitle">Identity-Adapted Object Memory for Sparse-View Object Retrieval</p>
       <ul class="authors" aria-label="Authors" role="list">
         <li>Rui Qian<sup>1</sup></li>
         <li>Hui Zhang<sup>2</sup></li>
@@ -136,42 +102,85 @@
         <li><sup>6</sup> Peking Union Medical College</li>
         <li><sup>7</sup> The Hong Kong University of Science and Technology</li>
       </ul>
-      <p class="venue">Preprint</p>
-      <nav class="resources" aria-label="Project resources">
-        <a class="button" href="#demo">Video</a>
-        <a class="button primary" href="demo/IAOM_demo.html">Interactive demo</a>
-        <a class="button" href="https://github.com/huihuihenqiang/IAOM">Code (coming soon)</a>
+      <nav class="links" aria-label="Project links">
+        <a href="#video">Video</a>
+        <a href="#interactive">Interactive demo</a>
+        <a href="https://github.com/huihuihenqiang/IAOM">Code (coming soon)</a>
+        <a href="#citation">Citation</a>
       </nav>
     </header>
-    <main id="content">
-      <section aria-labelledby="method-title">
-        <h2 id="method-title">Method overview</h2>
+
+    <main>
+      <section id="video" aria-label="Video">
         <figure>
-          <a href="assets/framework.webp" aria-label="Open the full-size IAOM framework figure">
-            <img src="assets/framework.webp" width="2200" height="1067" alt="IAOM framework showing identity adaptation, online object memory, and query-conditioned retrieval.">
+          <video controls playsinline preload="none" poster="assets/armchairs-poster.jpg" width="1600" height="900" aria-label="85-second IAOM armchair demonstration">
+            <source src="demo/IAOM_twin_armchairs_web.mp4" type="video/mp4">
+            <a href="demo/IAOM_twin_armchairs_85s.mp4">Open the video</a>
+          </video>
+          <figcaption>The animation follows a book delivery to one of two similar armchairs. It ends with a recorded 3RScan retrieval comparison. <a href="demo/IAOM_twin_armchairs_85s.mp4" download>Download the original video</a>.</figcaption>
+        </figure>
+      </section>
+
+      <section id="interactive">
+        <h2>Interactive Demo</h2>
+        <p class="explanation">Choose a query and a comparison method to inspect the retrieved boxes. <a href="demo/IAOM_demo.html#results-panel">Open the full demo</a>.</p>
+        <iframe title="IAOM retrieval comparison" src="demo/IAOM_demo.html" data-panel="results-panel" loading="lazy" height="640"></iframe>
+      </section>
+
+      <section id="framework">
+        <h2>Method Overview</h2>
+        <figure>
+          <a href="assets/framework.webp" aria-label="Open the full-size framework figure">
+            <img loading="lazy" src="assets/framework.webp" width="2200" height="1067" alt="Identity encoding adaptation, online object memory, and query-conditioned region retrieval.">
           </a>
           <figcaption>IAOM adapts instance descriptors, updates an online object memory, and uses region-level matches to select the target box.</figcaption>
         </figure>
+        <details><summary>Abstract</summary><p>We study object retrieval from sparse RGB observations. Given an object marked by a bounding box in an earlier image, the task is to locate that object in a specified later image. Large viewpoint changes and similar-looking objects make cross-view matching difficult. Overlapping detections create an additional ambiguity when a region resembles the query but covers only part of the object. We propose Identity-Adapted Object Memory (IAOM), which combines cross-view instance association with query-conditioned candidate ranking. An Identity Encoding Adapter learns instance-discriminative features and uses them to associate detections with entries in an online object memory. A retrieval head then scores target detections using appearance similarity, memory assignments, predicted geometry, and comparisons among overlapping boxes. Local feature correspondences within predicted object masks provide additional evidence for selecting the correct box. Three separately trained models rank the candidates, and their mean probability for each model&#x27;s top candidate determines whether to return it. On the 20-room 3RScan test set, the complete system obtains 68.07% retrieval F1. In controlled ablations with single-fit acceptance, adding local correspondence to the otherwise matched retrieval head improves F1 by 4.24 percentage points, with a room-paired 95% interval of [1.54,7.56], while increasing correct returns and reducing false positives. On MSG/ARKitScenes, the single-fit model trained and calibrated on the source data achieves 64.92% F1. These results show how local correspondence complements appearance, memory, and geometry when choosing among candidate regions.</p></details>
       </section>
-      <section id="demo" aria-labelledby="demo-title">
-        <h2 id="demo-title">Video and interactive demo</h2>
-        <figure>
-          <video controls playsinline preload="none" poster="assets/armchairs-poster.jpg" width="1920" height="1080" aria-label="85-second IAOM armchair demonstration">
-            <source src="demo/IAOM_twin_armchairs_web.mp4" type="video/mp4">
-            <a href="demo/IAOM_twin_armchairs_85s.mp4">Open the 85-second video</a>
-          </video>
-          <figcaption>The animation follows a book delivery to one of two similar armchairs. The closing segment shows a recorded 3RScan retrieval comparison. <a href="demo/IAOM_twin_armchairs_85s.mp4" download>Download the original 1080p MP4 (78 MiB)</a>.</figcaption>
-        </figure>
-        <p class="reading interactive-description">
-          <a href="demo/IAOM_demo.html">Open the interactive demo</a> to browse recorded queries, compare retrieval outputs, and step through IAOM’s memory and retrieval pipeline.
-        </p>
+
+      <section id="walkthrough">
+        <h2>Interactive Method Walkthrough</h2>
+        <p class="explanation">Select a step to follow the source query through memory updates and target retrieval. <a href="demo/IAOM_demo.html#method-panel">Open the full walkthrough</a>.</p>
+        <iframe title="IAOM method walkthrough" src="demo/IAOM_demo.html" data-panel="method-panel" loading="lazy" height="610"></iframe>
       </section>
-      <section class="reading" id="abstract" aria-labelledby="abstract-title">
-        <h2 id="abstract-title">Abstract</h2>
-        <p>We study object retrieval from sparse RGB observations. Given an object marked by a bounding box in an earlier image, the task is to locate that object in a specified later image. Large viewpoint changes and similar-looking objects make cross-view matching difficult. Overlapping detections create an additional ambiguity when a region resembles the query but covers only part of the object. We propose Identity-Adapted Object Memory (IAOM), which combines cross-view instance association with query-conditioned candidate ranking. An Identity Encoding Adapter learns instance-discriminative features and uses them to associate detections with entries in an online object memory. A retrieval head then scores target detections using appearance similarity, memory assignments, predicted geometry, and comparisons among overlapping boxes. Local feature correspondences within predicted object masks provide additional evidence for selecting the correct box. Three separately trained models rank the candidates, and their mean probability for each model&#x27;s top candidate determines whether to return it. On the 20-room 3RScan test set, the complete system obtains 68.07% retrieval F1. In controlled ablations with single-fit acceptance, adding local correspondence to the otherwise matched retrieval head improves F1 by 4.24 percentage points, with a room-paired 95% interval of [1.54,7.56], while increasing correct returns and reducing false positives. On MSG/ARKitScenes, the single-fit model trained and calibrated on the source data achieves 64.92% F1. These results show how local correspondence complements appearance, memory, and geometry when choosing among candidate regions.</p>
+
+      <section id="citation">
+        <h2>Citation</h2>
+        <pre><code>@misc{qian2026iaom,
+  title  = {{IAOM}: Identity-Adapted Object Memory for Sparse-View Object Retrieval},
+  author = {Qian, Rui and Zhang, Hui and Zhu, Yuanchao and He, Jun and Deng, Bicheng
+            and Li, Haijiang and {Chenziao} and Wu, Yuhe and Zhou, Yingbo},
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://huihuihenqiang.github.io/iaom/}
+}</code></pre>
       </section>
     </main>
-    <footer class="reading"><a href="../Pages/">Hui Zhang’s academic homepage</a></footer>
+
+    <footer><a href="../Pages/">Hui Zhang’s academic homepage</a></footer>
   </div>
+  <script>
+    for (const frame of document.querySelectorAll('iframe[data-panel]')) {
+      function fitPanel() {
+        const doc = frame.contentDocument;
+        const panel = doc?.getElementById(frame.dataset.panel);
+        if (!panel) return;
+        for (const sibling of panel.parentElement.children) {
+          if (sibling !== panel) sibling.style.setProperty('display', 'none', 'important');
+        }
+        panel.querySelector('.method-heading')?.style.setProperty('display', 'none', 'important');
+        panel.parentElement.style.setProperty('width', '100%', 'important');
+        panel.parentElement.style.setProperty('padding', '4px 0', 'important');
+        panel.style.setProperty('margin', '0', 'important');
+        function resize() {
+          frame.height = Math.ceil(panel.getBoundingClientRect().bottom + 8);
+        }
+        new ResizeObserver(resize).observe(panel);
+        resize();
+      }
+      frame.addEventListener('load', fitPanel);
+      if (frame.contentDocument?.readyState === 'complete') fitPanel();
+    }
+  </script>
 </body>
 </html>
