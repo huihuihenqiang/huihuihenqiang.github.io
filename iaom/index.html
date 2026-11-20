@@ -52,19 +52,19 @@
     .authors li { white-space: nowrap; }
     sup { font-size: .7em; }
     .affiliations { gap: 0 13px; margin: 5px auto 0; max-width: 780px; color: #545454; font-size: 14px; }
-    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 19px; margin: 14px 0 0; font-size: 15px; }
+    .equal-contribution { color: #454545; font-size: 14px; margin: 6px 0 0; }
+    .resources { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 700px; margin: 24px auto 4px; }
+    .resource { display: flex; flex-direction: column; align-items: center; gap: 5px; justify-content: flex-end; color: #303030; font-size: 16px; font-weight: 700; }
+    .resource svg { display: block; width: clamp(44px, 8vw, 65px); height: auto; color: #444; }
     main { display: grid; gap: 36px; }
     section { min-width: 0; scroll-margin-top: 16px; }
     h2 { text-align: center; font-size: clamp(22px, 3.1vw, 27px); font-weight: 600; margin-bottom: 10px; }
     video, figure img, iframe { display: block; width: 100%; }
     video, figure img { height: auto; }
     video { background: #1e2220; }
-    figcaption, .explanation, details { max-width: 760px; margin: 9px auto 0; }
-    figcaption, .explanation { font-size: 14px; color: #454545; }
-    iframe { border: 0; min-height: 240px; }
-    details { font-size: 14px; }
-    details summary { width: fit-content; cursor: pointer; }
-    details p { margin: 8px 0 0; }
+    figcaption { max-width: 760px; margin: 9px auto 0; font-size: 14px; color: #454545; text-align: center; }
+    #abstract p { max-width: 880px; margin: 0 auto; text-align: center; }
+    iframe { border: 0; min-height: 240px; margin-inline: auto; }
     pre { margin: 0; padding: 14px 16px; background: #f7f7f7; font-size: 13px; overflow-x: auto; }
     footer { margin: 26px 0 22px; font-size: 13px; text-align: center; }
     @media (max-width: 540px) {
@@ -83,8 +83,8 @@
       <h1>IAOM</h1>
       <p class="subtitle">Identity-Adapted Object Memory for Sparse-View Object Retrieval</p>
       <ul class="authors" aria-label="Authors" role="list">
-        <li>Rui Qian<sup>1</sup></li>
-        <li>Hui Zhang<sup>2</sup></li>
+        <li>Rui Qian<sup>1,*</sup></li>
+        <li>Hui Zhang<sup>2,*</sup></li>
         <li>Yuanchao Zhu<sup>3</sup></li>
         <li>Jun He<sup>4</sup></li>
         <li>Bicheng Deng<sup>1</sup></li>
@@ -102,28 +102,31 @@
         <li><sup>6</sup> Peking Union Medical College</li>
         <li><sup>7</sup> The Hong Kong University of Science and Technology</li>
       </ul>
-      <nav class="links" aria-label="Project links">
-        <a href="#video">Video</a>
-        <a href="#interactive">Interactive demo</a>
-        <a href="https://github.com/huihuihenqiang/IAOM">Code (coming soon)</a>
-        <a href="#citation">Citation</a>
+      <p class="equal-contribution"><sup>*</sup> Equal contribution</p>
+      <nav class="resources" aria-label="Paper resources">
+        <span class="resource" aria-disabled="true"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M19 6h34v46H19z" fill="#e8e8e8" stroke="#a9a9a9"/><path d="M13 10h34v46H13z" fill="#f6f6f6" stroke="#a9a9a9"/><path d="M7 14h34v46H7z" fill="white" stroke="#929292"/><path d="M14 22h20M14 27h20M14 34h8m4 0h8m-20 5h8m4 0h8m-20 5h8m4 0h8m-20 5h8m4 0h8m-20 5h8m4 0h8" fill="none" stroke="#959595" stroke-width="1.2"/></svg><span>Paper</span></span>
+        <a class="resource" href="https://github.com/huihuihenqiang/IAOM"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.09.67-3.74-1.31-3.74-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.47-.28-5.06-1.24-5.06-5.49 0-1.21.43-2.2 1.14-2.98-.12-.28-.49-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.54 0c2.12-1.44 3.05-1.14 3.05-1.14.6 1.53.23 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.6 5.21-5.08 5.49.4.35.75 1.03.75 2.08v3.01c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9z"/></svg><span>Code</span></a>
+        <span class="resource" aria-disabled="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><ellipse cx="32" cy="13" rx="23" ry="9"/><path d="M9 13v37c0 5 10 9 23 9s23-4 23-9V13M9 27c0 5 10 9 23 9s23-4 23-9M9 39c0 5 10 9 23 9s23-4 23-9"/></svg><span>Data</span></span>
       </nav>
     </header>
 
     <main>
       <section id="video" aria-label="Video">
         <figure>
-          <video controls playsinline preload="none" poster="assets/armchairs-poster.jpg" width="1600" height="900" aria-label="85-second IAOM armchair demonstration">
+          <video controls controlslist="nodownload" playsinline preload="none" poster="assets/armchairs-poster.jpg" width="1600" height="900" aria-label="85-second IAOM armchair demonstration">
             <source src="demo/IAOM_twin_armchairs_web.mp4" type="video/mp4">
-            <a href="demo/IAOM_twin_armchairs_85s.mp4">Open the video</a>
           </video>
-          <figcaption>The animation follows a book delivery to one of two similar armchairs. It ends with a recorded 3RScan retrieval comparison. <a href="demo/IAOM_twin_armchairs_85s.mp4" download>Download the original video</a>.</figcaption>
+          <figcaption>The animation follows a book delivery to one of two similar armchairs. It ends with a recorded 3RScan retrieval comparison.</figcaption>
         </figure>
+      </section>
+
+      <section id="abstract" aria-labelledby="abstract-heading">
+        <h2 id="abstract-heading">Abstract</h2>
+        <p>We study object retrieval from sparse RGB observations. Given an object marked by a bounding box in an earlier image, the task is to locate that object in a specified later image. Large viewpoint changes and similar-looking objects make cross-view matching difficult. Overlapping detections create an additional ambiguity when a region resembles the query but covers only part of the object. We propose Identity-Adapted Object Memory (IAOM), which combines cross-view instance association with query-conditioned candidate ranking. An Identity Encoding Adapter learns instance-discriminative features and uses them to associate detections with entries in an online object memory. A retrieval head then scores target detections using appearance similarity, memory assignments, predicted geometry, and comparisons among overlapping boxes. Local feature correspondences within predicted object masks provide additional evidence for selecting the correct box. Three separately trained models rank the candidates, and their mean probability for each model&#x27;s top candidate determines whether to return it. On the 20-room 3RScan test set, the complete system obtains 68.07% retrieval F1. In controlled ablations with single-fit acceptance, adding local correspondence to the otherwise matched retrieval head improves F1 by 4.24 percentage points, with a room-paired 95% interval of [1.54,7.56], while increasing correct returns and reducing false positives. On MSG/ARKitScenes, the single-fit model trained and calibrated on the source data achieves 64.92% F1. These results show how local correspondence complements appearance, memory, and geometry when choosing among candidate regions.</p>
       </section>
 
       <section id="interactive">
         <h2>Interactive Demo</h2>
-        <p class="explanation">Choose a query and a comparison method to inspect the retrieved boxes. <a href="demo/IAOM_demo.html#results-panel">Open the full demo</a>.</p>
         <iframe title="IAOM retrieval comparison" src="demo/IAOM_demo.html" data-panel="results-panel" loading="lazy" height="640"></iframe>
       </section>
 
@@ -135,12 +138,10 @@
           </a>
           <figcaption>IAOM adapts instance descriptors, updates an online object memory, and uses region-level matches to select the target box.</figcaption>
         </figure>
-        <details><summary>Abstract</summary><p>We study object retrieval from sparse RGB observations. Given an object marked by a bounding box in an earlier image, the task is to locate that object in a specified later image. Large viewpoint changes and similar-looking objects make cross-view matching difficult. Overlapping detections create an additional ambiguity when a region resembles the query but covers only part of the object. We propose Identity-Adapted Object Memory (IAOM), which combines cross-view instance association with query-conditioned candidate ranking. An Identity Encoding Adapter learns instance-discriminative features and uses them to associate detections with entries in an online object memory. A retrieval head then scores target detections using appearance similarity, memory assignments, predicted geometry, and comparisons among overlapping boxes. Local feature correspondences within predicted object masks provide additional evidence for selecting the correct box. Three separately trained models rank the candidates, and their mean probability for each model&#x27;s top candidate determines whether to return it. On the 20-room 3RScan test set, the complete system obtains 68.07% retrieval F1. In controlled ablations with single-fit acceptance, adding local correspondence to the otherwise matched retrieval head improves F1 by 4.24 percentage points, with a room-paired 95% interval of [1.54,7.56], while increasing correct returns and reducing false positives. On MSG/ARKitScenes, the single-fit model trained and calibrated on the source data achieves 64.92% F1. These results show how local correspondence complements appearance, memory, and geometry when choosing among candidate regions.</p></details>
       </section>
 
       <section id="walkthrough">
         <h2>Interactive Method Walkthrough</h2>
-        <p class="explanation">Select a step to follow the source query through memory updates and target retrieval. <a href="demo/IAOM_demo.html#method-panel">Open the full walkthrough</a>.</p>
         <iframe title="IAOM method walkthrough" src="demo/IAOM_demo.html" data-panel="method-panel" loading="lazy" height="610"></iframe>
       </section>
 
@@ -171,9 +172,14 @@
         panel.querySelector('.method-heading')?.style.setProperty('display', 'none', 'important');
         panel.parentElement.style.setProperty('width', '100%', 'important');
         panel.parentElement.style.setProperty('padding', '4px 0', 'important');
-        panel.style.setProperty('margin', '0', 'important');
+        panel.style.setProperty('width', '100%', 'important');
+        panel.style.setProperty('margin', '0 auto', 'important');
+        for (const exhibit of panel.querySelectorAll('.method-exhibit, .result-stage canvas')) {
+          exhibit.style.setProperty('width', '100%', 'important');
+        }
         function resize() {
-          frame.height = Math.ceil(panel.getBoundingClientRect().bottom + 8);
+          const height = Math.ceil(panel.getBoundingClientRect().bottom + 8);
+          if (frame.height !== String(height)) frame.height = String(height);
         }
         new ResizeObserver(resize).observe(panel);
         resize();
