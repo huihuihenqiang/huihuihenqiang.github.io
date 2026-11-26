@@ -32,152 +32,205 @@
   <meta name="citation_author" content="Yingbo Zhou">
   <meta name="citation_author_institution" content="Fudan University">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Varela+Round&amp;display=swap">
-  <style>
-    * { box-sizing: border-box; }
-    html { color-scheme: light; }
-    body { margin: 0; background: #fff; color: #292929; font: 16px/1.65 "Open Sans", Arial, sans-serif; }
-    .page { max-width: 980px; margin: 0 auto; padding: 0 20px; }
-    a { color: #245a91; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    a:focus-visible, summary:focus-visible { outline: 2px solid #245a91; outline-offset: 4px; }
-    header { text-align: center; padding: 36px 0 20px; }
-    h1, h2, p, figure { margin: 0; }
-    h1 { font: 400 clamp(32px, 6vw, 50px)/1.12 "Varela Round", "Open Sans", sans-serif; }
-    .query-mark { display: inline-block; width: .72em; height: .72em; margin-inline-end: .23em; vertical-align: .02em; }
-    .subtitle { margin: 4px auto 18px; font-size: clamp(19px, 3vw, 25px); line-height: 1.35; text-wrap: balance; }
-    .authors, .affiliations { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; padding: 0; margin: 0; }
-    .authors { gap: 2px 13px; font-size: 17px; }
-    .authors li { white-space: nowrap; }
-    sup { font-size: .7em; }
-    .affiliations { gap: 0 13px; margin: 5px auto 0; max-width: 780px; color: #545454; font-size: 14px; }
-    .equal-contribution { color: #454545; font-size: 14px; margin: 6px 0 0; }
-    .resources { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 700px; margin: 24px auto 4px; }
-    .resource { display: flex; flex-direction: column; align-items: center; gap: 5px; justify-content: flex-end; color: #303030; font-size: 16px; font-weight: 700; }
-    .resource svg { display: block; width: clamp(44px, 8vw, 65px); height: auto; color: #444; }
-    main { display: grid; gap: 36px; }
-    section { min-width: 0; scroll-margin-top: 16px; }
-    h2 { text-align: center; font-size: clamp(22px, 3.1vw, 27px); font-weight: 600; margin-bottom: 10px; }
-    video, figure img, iframe { display: block; width: 100%; }
-    video, figure img { height: auto; }
-    video { background: #1e2220; }
-    figcaption { max-width: 760px; margin: 9px auto 0; font-size: 14px; color: #454545; text-align: center; }
-    #abstract p { max-width: 880px; margin: 0 auto; text-align: center; }
-    iframe { border: 0; min-height: 240px; margin-inline: auto; }
-    pre { margin: 0; padding: 14px 16px; background: #f7f7f7; font-size: 13px; overflow-x: auto; }
-    footer { margin: 26px 0 22px; font-size: 13px; text-align: center; }
-    @media (max-width: 540px) {
-      .page { padding-inline: 14px; }
-      header { padding-top: 26px; }
-      .authors { font-size: 15px; }
-      .affiliations { font-size: 13px; }
-      main { gap: 27px; }
-    }
-  </style>
+  <link rel="stylesheet" href="project.css">
 </head>
 
-<body>
-  <div class="page">
-    <header>
-      <h1><svg class="query-mark" viewBox="0 0 28 28" fill="none" stroke="#ef852f" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><path d="M10 3H3v7m15-7h7v7M3 18v7h7m15-7v7h-7"/></svg>IAOM</h1>
-      <p class="subtitle">Identity-Adapted Object Memory for Sparse-View Object Retrieval</p>
-      <ul class="authors" aria-label="Authors" role="list">
-        <li>Rui Qian<sup>1,*</sup></li>
-        <li>Hui Zhang<sup>2,*</sup></li>
-        <li>Yuanchao Zhu<sup>3</sup></li>
-        <li>Jun He<sup>4</sup></li>
-        <li>Bicheng Deng<sup>1</sup></li>
-        <li>Haijiang Li<sup>5</sup></li>
-        <li>Chenziao<sup>6</sup></li>
-        <li>Yuhe Wu<sup>7</sup></li>
-        <li>Yingbo Zhou<sup>1</sup></li>
+<body id="top">
+  <header class="paper-header wide">
+    <h1><span class="project-name"><svg class="query-mark" viewBox="0 0 28 28" fill="none" stroke="#ef852f" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><path d="M10 3H3v7m15-7h7v7M3 18v7h7m15-7v7h-7"/></svg>IAOM:</span> <span class="term">Identity-Adapted</span> Object Memory<br> for <span class="term">Sparse-View</span> Object Retrieval</h1>
+    <ul class="authors" aria-label="Authors" role="list">
+        <li><a href="https://scholar.google.com.hk/citations?user=z3sAW3oAAAAJ&amp;hl=zh-CN" aria-label="Rui Qian on Google Scholar">Rui Qian</a><sup>1,*</sup>,</li>
+        <li><a href="https://scholar.google.com/citations?user=-rdWMTgAAAAJ" aria-label="Hui Zhang on Google Scholar">Hui Zhang</a><sup>2,*</sup>,</li>
+        <li><a href="https://scholar.google.com/citations?user=BDQmuVEAAAAJ&amp;hl=zh-CN" aria-label="Yuanchao Zhu on Google Scholar">Yuanchao Zhu</a><sup>3</sup>,</li>
+        <li><a href="https://www.google.com/search?q=%22Jun+He%22+%22Beijing+Technology+and+Business+University%22" title="Search by name and affiliation" aria-label="Jun He — search by name and affiliation">Jun He</a><sup>4</sup>,</li>
+        <li><a href="https://github.com/Dmax-666" aria-label="Bicheng Deng on GitHub">Bicheng Deng</a><sup>1</sup>,</li>
+        <li><a href="https://github.com/hamsterjiang23" aria-label="Haijiang Li on GitHub">Haijiang Li</a><sup>5</sup>,</li>
+        <li>Chenziao<sup>6</sup>,</li>
+        <li><a href="https://scholar.google.com/citations?user=vm72Sj4AAAAJ&amp;hl=en" aria-label="Yuhe Wu on Google Scholar">Yuhe Wu</a><sup>7</sup>,</li>
+        <li><a href="https://scholar.google.com/citations?user=1hEiYYcAAAAJ&amp;hl=en" aria-label="Yingbo Zhou on Google Scholar">Yingbo Zhou</a><sup>1</sup></li>
       </ul>
-      <ul class="affiliations" aria-label="Affiliations" role="list">
-        <li><sup>1</sup> Fudan University</li>
-        <li><sup>2</sup> Beijing Institute of Technology</li>
-        <li><sup>3</sup> University of Electronic Science and Technology of China</li>
-        <li><sup>4</sup> Beijing Technology and Business University</li>
-        <li><sup>5</sup> Nanjing University of Science and Technology</li>
-        <li><sup>6</sup> Peking Union Medical College</li>
-        <li><sup>7</sup> The Hong Kong University of Science and Technology</li>
+        <ul class="affiliations" aria-label="Affiliations" role="list">
+        <li><sup>1</sup> <abbr title="Fudan University">FDU</abbr></li>
+        <li><sup>2</sup> <abbr title="Beijing Institute of Technology">BIT</abbr></li>
+        <li><sup>3</sup> <abbr title="University of Electronic Science and Technology of China">UESTC</abbr></li>
+        <li><sup>4</sup> <abbr title="Beijing Technology and Business University">BTBU</abbr></li>
+        <li><sup>5</sup> <abbr title="Nanjing University of Science and Technology">NJUST</abbr></li>
+        <li><sup>6</sup> <abbr title="Peking Union Medical College">PUMC</abbr></li>
+        <li><sup>7</sup> <abbr title="The Hong Kong University of Science and Technology">HKUST</abbr></li>
       </ul>
       <p class="equal-contribution"><sup>*</sup> Equal contribution</p>
-      <nav class="resources" aria-label="Paper resources">
-        <span class="resource" aria-disabled="true"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M19 6h34v46H19z" fill="#e8e8e8" stroke="#a9a9a9"/><path d="M13 10h34v46H13z" fill="#f6f6f6" stroke="#a9a9a9"/><path d="M7 14h34v46H7z" fill="white" stroke="#929292"/><path d="M14 22h20M14 27h20M14 34h8m4 0h8m-20 5h8m4 0h8m-20 5h8m4 0h8m-20 5h8m4 0h8m-20 5h8m4 0h8" fill="none" stroke="#959595" stroke-width="1.2"/></svg><span>Paper</span></span>
-        <a class="resource" href="https://github.com/huihuihenqiang/IAOM"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.09.67-3.74-1.31-3.74-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.47-.28-5.06-1.24-5.06-5.49 0-1.21.43-2.2 1.14-2.98-.12-.28-.49-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.54 0c2.12-1.44 3.05-1.14 3.05-1.14.6 1.53.23 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.6 5.21-5.08 5.49.4.35.75 1.03.75 2.08v3.01c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9z"/></svg><span>Code</span></a>
-        <span class="resource" aria-disabled="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><ellipse cx="32" cy="13" rx="23" ry="9"/><path d="M9 13v37c0 5 10 9 23 9s23-4 23-9V13M9 27c0 5 10 9 23 9s23-4 23-9M9 39c0 5 10 9 23 9s23-4 23-9"/></svg><span>Data</span></span>
-      </nav>
-    </header>
-
-    <main>
-      <section id="video" aria-label="Video">
-        <figure>
-          <video controls controlslist="nodownload" playsinline preload="none" poster="assets/armchairs-poster.jpg" width="1600" height="900" aria-label="85-second IAOM armchair demonstration">
+    <nav class="resources" aria-label="Paper resources">
+          <span class="resource pending" aria-disabled="true" title="arXiv link coming soon"><img class="arxiv-mark" src="assets/arxiv-mark.svg" width="18" height="18" alt=""><span>arXiv</span></span>
+          <a class="resource" href="https://github.com/huihuihenqiang/IAOM"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.09.67-3.74-1.31-3.74-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.47-.28-5.06-1.24-5.06-5.49 0-1.21.43-2.2 1.14-2.98-.12-.28-.49-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.54 0c2.12-1.44 3.05-1.14 3.05-1.14.6 1.53.23 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.6 5.21-5.08 5.49.4.35.75 1.03.75 2.08v3.01c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9z"/></svg><span>GitHub</span></a>
+          <a class="resource primary" href="#interactive"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4" width="19" height="15" rx="3"/><path d="m10 8 5.5 3.5L10 15z" fill="currentColor" stroke="none"/></svg><span>Demo</span></a>
+        </nav>
+  </header>
+  <main>
+    <figure id="video" class="teaser wide"><video controls controlslist="nodownload" playsinline preload="none" poster="assets/armchairs-poster.jpg" width="1600" height="900" aria-label="85-second IAOM armchair demonstration">
             <source src="demo/IAOM_twin_armchairs_web.mp4" type="video/mp4">
           </video>
-          <figcaption>The animation follows a book delivery to one of two similar armchairs. It ends with a recorded 3RScan retrieval comparison.</figcaption>
-        </figure>
+      <figcaption>IAOM retrieves the same physical object across sparse views and achieves <strong>68.07% retrieval F1</strong> on the 20-room 3RScan test set.</figcaption>
+    </figure>
+    <section id="abstract" class="wide summary" aria-label="Abstract"><div class="prose"><p>We study object retrieval from sparse RGB observations. Given an object marked by a bounding box in an earlier image, the task is to locate that object in a specified later image. Large viewpoint changes and similar-looking objects make cross-view matching difficult. Overlapping detections create an additional ambiguity when a region resembles the query but covers only part of the object.</p>
+        <p>We propose Identity-Adapted Object Memory (IAOM), which combines cross-view instance association with query-conditioned candidate ranking. An Identity Encoding Adapter learns instance-discriminative features and uses them to associate detections with entries in an online object memory. A retrieval head then scores target detections using appearance similarity, memory assignments, predicted geometry, and comparisons among overlapping boxes. Local feature correspondences within predicted object masks provide additional evidence for selecting the correct box. Three separately trained models rank the candidates, and their mean probability for each model&#x27;s top candidate determines whether to return it.</p>
+        <p>On the 20-room 3RScan test set, the complete system obtains 68.07% retrieval F1. In controlled ablations with single-fit acceptance, adding local correspondence to the otherwise matched retrieval head improves F1 by 4.24 percentage points, with a room-paired 95% interval of [1.54,7.56], while increasing correct returns and reducing false positives. On MSG/ARKitScenes, the single-fit model trained and calibrated on the source data achieves 64.92% F1. These results show how local correspondence complements appearance, memory, and geometry when choosing among candidate regions.</p></div>
+      <details id="results" class="evaluation">
+        <summary>Evaluation details</summary>
+        <table aria-label="Retrieval F1 by evaluation setting">
+          <thead><tr><th scope="col">Dataset and setting</th><th scope="col">Retrieval F1</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">3RScan<small>Full system · 20 test rooms</small></th><td>68.07%</td></tr>
+            <tr><th scope="row">MSG/ARKitScenes<small>Single fit · trained and calibrated on source data</small></th><td>64.92%</td></tr>
+          </tbody>
+        </table>
+        <div class="ablation">
+          <p><strong>Effect of local correspondence</strong><span>+4.24 pp</span></p>
+          <small>Gain in retrieval F1 with single-fit acceptance. Room-paired 95% interval of +1.54 to +7.56 percentage points.</small>
+        </div>
+      </details>
+    </section>
+    <section id="framework" class="wide"><h2>Overview</h2>
+      <figure class="framework"><a href="assets/framework.webp" aria-label="Open the full-size framework figure"><img loading="lazy" src="assets/framework.webp" width="2200" height="1067" alt="IAOM architecture for identity encoding, online object memory and query-conditioned retrieval"></a></figure>
+      <p class="method-copy">The <strong>Identity Encoding Adapter</strong> learns to recognize an instance across viewpoints. Detections update an <strong>online object memory</strong>. In the requested target view, the retrieval head ranks candidate regions using their appearance, memory assignments, geometry and <strong>local feature correspondences</strong>.</p>
+      <section id="walkthrough"><h3>Follow the display cabinet from view 1 to view 13</h3>
+        <iframe title="IAOM method walkthrough" src="demo/IAOM_demo.html?panel=method-panel" data-panel="method-panel" loading="lazy" height="610"></iframe>
       </section>
-
-      <section id="abstract" aria-labelledby="abstract-heading">
-        <h2 id="abstract-heading">Abstract</h2>
-        <p>We study object retrieval from sparse RGB observations. Given an object marked by a bounding box in an earlier image, the task is to locate that object in a specified later image. Large viewpoint changes and similar-looking objects make cross-view matching difficult. Overlapping detections create an additional ambiguity when a region resembles the query but covers only part of the object. We propose Identity-Adapted Object Memory (IAOM), which combines cross-view instance association with query-conditioned candidate ranking. An Identity Encoding Adapter learns instance-discriminative features and uses them to associate detections with entries in an online object memory. A retrieval head then scores target detections using appearance similarity, memory assignments, predicted geometry, and comparisons among overlapping boxes. Local feature correspondences within predicted object masks provide additional evidence for selecting the correct box. Three separately trained models rank the candidates, and their mean probability for each model&#x27;s top candidate determines whether to return it. On the 20-room 3RScan test set, the complete system obtains 68.07% retrieval F1. In controlled ablations with single-fit acceptance, adding local correspondence to the otherwise matched retrieval head improves F1 by 4.24 percentage points, with a room-paired 95% interval of [1.54,7.56], while increasing correct returns and reducing false positives. On MSG/ARKitScenes, the single-fit model trained and calibrated on the source data achieves 64.92% F1. These results show how local correspondence complements appearance, memory, and geometry when choosing among candidate regions.</p>
-      </section>
-
-      <section id="interactive">
-        <h2>Interactive Demo</h2>
-        <iframe title="IAOM retrieval comparison" src="demo/IAOM_demo.html" data-panel="results-panel" loading="lazy" height="640"></iframe>
-      </section>
-
-      <section id="framework">
-        <h2>Method Overview</h2>
-        <figure>
-          <a href="assets/framework.webp" aria-label="Open the full-size framework figure">
-            <img loading="lazy" src="assets/framework.webp" width="2200" height="1067" alt="Identity encoding adaptation, online object memory, and query-conditioned region retrieval.">
-          </a>
-          <figcaption>IAOM adapts instance descriptors, updates an online object memory, and uses region-level matches to select the target box.</figcaption>
-        </figure>
-      </section>
-
-      <section id="walkthrough">
-        <h2>Interactive Method Walkthrough</h2>
-        <iframe title="IAOM method walkthrough" src="demo/IAOM_demo.html" data-panel="method-panel" loading="lazy" height="610"></iframe>
-      </section>
-
-      <section id="citation">
-        <h2>Citation</h2>
-        <pre><code>@misc{qian2026iaom,
+    </section>
+    <section class="wide comparisons" id="examples" aria-labelledby="comparison">
+      <h2 id="comparison">Comparison to REMIND</h2>
+      <article class="case-row">
+        <div class="query-prompt">
+          <a class="query-object" href="assets/gallery/5c3c365c9ea68522.jpg" style="aspect-ratio:536.76412/655.57880" aria-label="Open the source image from view 4"><img src="assets/gallery/5c3c365c9ea68522.jpg" style="width:100.602849%;left:-0.345195%;top:-39.985074%" alt="Query crop of the kitchen cabinet"></a>
+          <div><h3>Find the kitchen cabinet in view 6.</h3><p>Query from view 4</p>
+          <a class="full-example" href="assets/gallery/kitchen-comparison.jpg" data-description="Kitchen cabinet, views 4 to 6. REMIND returns no match. IAOM retrieves the same cabinet.">Open full comparison</a></div>
+        </div>
+        <div class="gallery pair">
+          <figure>
+            <div class="photo"><img src="assets/gallery/bee31466d6f7d9a0.jpg" width="540" height="960" alt="Kitchen cabinet in view 6. REMIND: No match returned."></div>
+            <figcaption><strong>REMIND</strong><span>No match returned</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="assets/gallery/bee31466d6f7d9a0.jpg" width="540" height="960" alt="Kitchen cabinet in view 6. IAOM (ours): Same object."><span class="region" aria-hidden="true" style="left:17.24111%;top:0.17263%;width:78.23097%;height:45.62109%"></span></div>
+            <figcaption><strong>IAOM (ours)</strong><span>Same object</span></figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="case-row">
+        <div class="query-prompt">
+          <a class="query-object" href="assets/gallery/9d955f6c55068012.jpg" style="aspect-ratio:427.91730/452.58394" aria-label="Open the source image from view 3"><img src="assets/gallery/9d955f6c55068012.jpg" style="width:126.192606%;left:-26.043997%;top:-53.702915%" alt="Query crop of the dining table"></a>
+          <div><h3>Find the dining table in view 5.</h3><p>Query from view 3</p>
+          <a class="full-example" href="assets/gallery/dining-comparison.jpg" data-description="Dining table, views 3 to 5. REMIND and IAOM both retrieve the same table.">Open full comparison</a></div>
+        </div>
+        <div class="gallery pair">
+          <figure>
+            <div class="photo"><img src="assets/gallery/e769785d33a3eb87.jpg" width="540" height="960" alt="Dining table in view 5. REMIND: Same object."><span class="region" aria-hidden="true" style="left:0.35414%;top:0.20910%;width:99.42404%;height:99.27206%"></span></div>
+            <figcaption><strong>REMIND</strong><span>Same object</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="assets/gallery/e769785d33a3eb87.jpg" width="540" height="960" alt="Dining table in view 5. IAOM (ours): Same object."><span class="region" aria-hidden="true" style="left:0.35414%;top:0.20910%;width:99.42404%;height:99.27206%"></span></div>
+            <figcaption><strong>IAOM (ours)</strong><span>Same object</span></figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="case-row">
+        <div class="query-prompt">
+          <a class="query-object" href="assets/gallery/b60c21d0d56b0c7b.jpg" style="aspect-ratio:450.20172/637.21686" aria-label="Open the source image from view 1"><img src="assets/gallery/b60c21d0d56b0c7b.jpg" style="width:119.946232%;left:-0.311737%;top:-50.359137%" alt="Query crop of the display cabinet"></a>
+          <div><h3>Find the display cabinet in view 13.</h3><p>Query from view 1</p></div>
+        </div>
+        <div class="gallery pair">
+          <figure>
+            <div class="photo"><img src="assets/gallery/153a408d407a55e2.jpg" width="540" height="960" alt="Display cabinet in view 13. REMIND: Partial region."><span class="region" aria-hidden="true" style="left:0.06272%;top:10.53874%;width:19.36849%;height:89.25284%"></span></div>
+            <figcaption><strong>REMIND</strong><span>Partial region</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="assets/gallery/153a408d407a55e2.jpg" width="540" height="960" alt="Display cabinet in view 13. IAOM (ours): Same object."><span class="region" aria-hidden="true" style="left:0.27502%;top:10.21212%;width:99.49884%;height:89.62848%"></span></div>
+            <figcaption><strong>IAOM (ours)</strong><span>Same object</span></figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+    <section class="wide comparisons" id="multi-method">
+      <h2>Comparison to other retrieval methods</h2>
+      <article class="case-row">
+        <div class="query-prompt">
+          <a class="query-object" href="assets/gallery/7c57b729a9d20790.jpg" style="aspect-ratio:402.74414/454.46232" aria-label="Open the source image from view 3"><img src="assets/gallery/7c57b729a9d20790.jpg" style="width:134.080163%;left:-28.455405%;top:-0.231863%" alt="Query crop of the armchair"></a>
+          <div><h3>Find the armchair in view 16.</h3><p>Query from view 3</p></div>
+        </div>
+        <div class="gallery four">
+          <figure>
+            <div class="photo"><img src="assets/gallery/8e4840f32eb525a1.jpg" width="540" height="960" alt="Armchair in view 16. REN: No match returned."></div>
+            <figcaption><strong>REN</strong><span>No match returned</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="assets/gallery/8e4840f32eb525a1.jpg" width="540" height="960" alt="Armchair in view 16. SAM2Long: Same object."><span class="region" aria-hidden="true" style="left:43.83023%;top:19.13787%;width:56.10864%;height:68.33995%"></span></div>
+            <figcaption><strong>SAM2Long</strong><span>Same object</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="assets/gallery/8e4840f32eb525a1.jpg" width="540" height="960" alt="Armchair in view 16. DAM4SAM: Same object."><span class="region" aria-hidden="true" style="left:43.83023%;top:19.13787%;width:56.10864%;height:68.33995%"></span></div>
+            <figcaption><strong>DAM4SAM</strong><span>Same object</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="assets/gallery/8e4840f32eb525a1.jpg" width="540" height="960" alt="Armchair in view 16. IAOM (ours): Same object."><span class="region" aria-hidden="true" style="left:43.83023%;top:19.13787%;width:56.10864%;height:68.33995%"></span></div>
+            <figcaption><strong>IAOM (ours)</strong><span>Same object</span></figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+    <section id="interactive" class="wide" aria-labelledby="interactive-heading">
+      <h2 id="interactive-heading">Explore all five examples</h2>
+      <p class="legend">Select an object and a baseline to view its recorded return alongside IAOM.</p>
+      <iframe title="IAOM retrieval comparison" src="demo/IAOM_demo.html?panel=results-panel" data-panel="results-panel" loading="lazy" height="640"></iframe>
+    </section>
+    <section id="citation" class="wide"><h2>BibTeX</h2><pre tabindex="0" aria-label="BibTeX citation"><code>@misc{qian2026iaom,
   title  = {{IAOM}: Identity-Adapted Object Memory for Sparse-View Object Retrieval},
   author = {Qian, Rui and Zhang, Hui and Zhu, Yuanchao and He, Jun and Deng, Bicheng
             and Li, Haijiang and {Chenziao} and Wu, Yuhe and Zhou, Yingbo},
   year   = {2026},
   note   = {Preprint},
   url    = {https://huihuihenqiang.github.io/iaom/}
-}</code></pre>
-      </section>
-    </main>
-
-    <footer><a href="../Pages/">Hui Zhang’s academic homepage</a></footer>
-  </div>
+}</code></pre></section>
+  </main>
+  <dialog class="image-preview" aria-labelledby="preview-title">
+    <header>
+      <h2 id="preview-title">Full comparison</h2>
+      <form method="dialog"><button type="submit" autofocus>Close <span aria-hidden="true">×</span></button></form>
+    </header>
+    <img alt="">
+  </dialog>
+  <footer><a href="https://huihuihenqiang.github.io/Pages/">Hui Zhang’s academic homepage</a></footer>
   <script>
+    const preview = document.querySelector('.image-preview');
+    const previewTitle = preview.querySelector('h2');
+    const previewImage = preview.querySelector('img');
+    for (const link of document.querySelectorAll('.full-example, .query-object, .framework a')) {
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        previewTitle.textContent = link.classList.contains('full-example') ? 'Full comparison'
+          : link.classList.contains('query-object') ? 'Source image' : 'Method overview';
+        previewImage.alt = link.dataset.description || link.getAttribute('aria-label') || previewTitle.textContent;
+        previewImage.src = link.href;
+        link.focus({preventScroll: true});
+        preview.showModal();
+      });
+    }
+    preview.addEventListener('click', event => {
+      if (event.target === preview) preview.close();
+    });
+
+    function openLinkedDetails() {
+      const target = document.getElementById(location.hash.slice(1));
+      if (target instanceof HTMLDetailsElement) target.open = true;
+    }
+    window.addEventListener('hashchange', openLinkedDetails);
+    openLinkedDetails();
+
     for (const frame of document.querySelectorAll('iframe[data-panel]')) {
       function fitPanel() {
         const doc = frame.contentDocument;
         const panel = doc?.getElementById(frame.dataset.panel);
         if (!panel) return;
-        for (const sibling of panel.parentElement.children) {
-          if (sibling !== panel) sibling.style.setProperty('display', 'none', 'important');
-        }
-        panel.querySelector('.method-heading')?.style.setProperty('display', 'none', 'important');
-        panel.parentElement.style.setProperty('width', '100%', 'important');
-        panel.parentElement.style.setProperty('padding', '4px 0', 'important');
-        panel.style.setProperty('width', '100%', 'important');
-        panel.style.setProperty('margin', '0 auto', 'important');
-        for (const exhibit of panel.querySelectorAll('.method-exhibit, .result-stage canvas')) {
-          exhibit.style.setProperty('width', '100%', 'important');
-        }
         function resize() {
           const height = Math.ceil(panel.getBoundingClientRect().bottom + 8);
           if (frame.height !== String(height)) frame.height = String(height);

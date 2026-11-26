@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google" content="notranslate">
   <meta name="description" content="Find the queried physical object in a later view. An IAOM memory walkthrough and five recorded method comparisons.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-BAH/206yrOsnmLR4No1OYjbsN3/b5yVIgJ2vbHPhtzA=' 'sha256-QxY5N3fx0Ex/b0zaYPyUzRa9ofPOGCgp+5Dugbfkqjc=' 'sha256-XRN4HHvCr2Zpkz8dMSt1ZOiN1ytbp0/8HXyTDgdiEXg=' 'sha256-mDpfdZVGZL5rdcx7BJt2VDVr9ROKA88Vl8tC9InCVNQ='; style-src 'sha256-Td+ZlGa9mlR45tVD+OCn2VYv0uyftkS5lfVmIbuK5Vc='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-tsAbZ9EioUHR37uwWSH757scNhH2hqBCfiiqYBLdpCA=' 'sha256-BAH/206yrOsnmLR4No1OYjbsN3/b5yVIgJ2vbHPhtzA=' 'sha256-QxY5N3fx0Ex/b0zaYPyUzRa9ofPOGCgp+5Dugbfkqjc=' 'sha256-Tolr0ULPnSBvc3Do53c4Hc9DIT8ZHXNtG34aTKgMsaM=' 'sha256-+Vf42K/MWZGBZITelaxkrCEBX2QPAgFpjJxLgGTZh4k='; style-src 'sha256-Td+ZlGa9mlR45tVD+OCn2VYv0uyftkS5lfVmIbuK5Vc=' 'sha256-9TT+Qj6cOwKaWbQ6Q2tpk3XbfE4w00DqG8AOi5n5n8Y='; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>IAOM | Cross-view object retrieval</title>
   <link rel="icon" href="data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNSIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMSA1SDV2Nm0xNi02aDZ2Nk01IDIxdjZoNm0xNi02djZoLTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M2NWQyNyIgc3Ryb2tlLXdpZHRoPSIyLjciLz48L3N2Zz4KDQo=" type="image/svg+xml">
   <style>:root{color-scheme:light;--ink:#24282b;--muted:#687078;--signal:#c65d27;--line:#dfe3e0;--pale:#f2f4f1;--surface-shadow:0 20px 48px -18px rgba(31,42,36,.19),0 5px 12px -5px rgba(31,42,36,.13),0 1px 2px rgba(31,42,36,.04);font-family:"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;font-synthesis:none}
@@ -27,6 +27,35 @@
 
 .title-row{display:flex;align-items:center;justify-content:center;text-align:center;gap:28px;margin-bottom:14px}.title-row .wordmark{flex-shrink:0}.task-intro{text-align:center}.task-background{max-width:none;margin:0;color:var(--muted);font-size:18px;line-height:1.45}.task-query{margin:10px 0 0;font-size:22px;line-height:1.4;font-weight:600;color:var(--ink)}.method-heading .section-label{text-align:center;color:var(--ink);margin:0 0 20px}.task-query{scroll-margin-top:24px}@media(max-width:700px){.task-background{font-size:16px}.task-query{font-size:19px}.title-row{gap:14px;align-items:center}.masthead h1{font-size:clamp(20px,4.4vw,30px)}}
 </style>
+<style>
+html[data-panel] .page { width: 100%; margin: 0; padding: 0; }
+html[data-panel] .masthead, html[data-panel="results-panel"] #method-panel, html[data-panel="method-panel"] #results-panel { display: none; }
+html[data-panel] #results-panel, html[data-panel] #method-panel, html[data-panel] .method-exhibit { width: 100%; margin: 0; padding: 0; }
+html[data-panel] { overflow: hidden; }
+:root { --ink: #333; --muted: #58616b; --signal: #3273a8; --surface-shadow: none; }
+.result-stage, .method-exhibit { border-radius: 8px; }
+.result-stage canvas { width: 100%; }
+.query-heading { margin: 0 0 12px; font-size: 18px; font-weight: 600; text-align: center; }
+.method-heading { margin: 16px auto; }
+.method-heading h2 { font-size: 22px; }
+.method-heading p { font-size: 15px; }
+.method-selector button[aria-pressed=true] { color: #174f82; background: #e7f1fa; }
+.case-button[aria-pressed=true] { border-color: var(--signal); }
+.case-nav { margin-inline: 0; }
+#baseline-buttons { flex-wrap: wrap; justify-content: center; }
+@media(max-width:700px) {
+  .case-buttons { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .method-selector button { padding: 8px; }
+  .case-button img { max-width: 100%; }
+}
+</style>
+<script>
+  const panelOptions = new URLSearchParams(location.search);
+  const activePanel = panelOptions.get('panel');
+  if (['results-panel', 'method-panel'].includes(activePanel)) {
+    document.documentElement.dataset.panel = activePanel;
+  }
+</script>
   </head>
 <body>
   <main class="page">
@@ -41,7 +70,7 @@
     </header>
 
     <section class="results-section" id="results-panel" aria-label="Result comparison" aria-busy="true">
-      <p id="task-query" class="sr-only">Find the display cabinet from view 1 in view 13.</p>
+      <p id="task-query" class="query-heading">Find the display cabinet from view 1 in view 13.</p>
       <div class="result-comparison">
       <div class="stage-wrap result-stage">
         <canvas id="result-stage" width="1440" height="760" role="img" aria-label="Loading the first comparison." aria-describedby="result-description">Enable JavaScript to explore the comparisons.</canvas>
@@ -59,11 +88,6 @@
     </section>
 
     <section id="method-panel" aria-labelledby="method-title" aria-busy="true">
-      <div class="section-heading method-heading">
-        <p class="section-label">How IAOM remembers</p>
-        <h2 id="method-title">One object. A changing world.</h2>
-        <p id="method-caption">A visual query follows the same physical object across a sparse sequence.</p>
-      </div>
       <div class="method-exhibit">
         <div class="stage-wrap method-stage">
           <canvas id="method-stage" width="1440" height="760" role="img" aria-label="Loading the memory walkthrough." aria-describedby="method-description">Enable JavaScript to explore the method.</canvas>
@@ -71,6 +95,11 @@
         </div>
         <p id="method-description" class="sr-only" aria-live="polite"></p>
         <div class="method-controls">
+          <div class="section-heading method-heading">
+        
+        <h2 id="method-title">One object. A changing world.</h2>
+        <p id="method-caption">A visual query follows the same physical object across a sparse sequence.</p>
+      </div>
           <div id="chapter-buttons" class="chapter-buttons" role="group" aria-label="Jump to a moment in the mechanism"></div>
         </div>
       </div>
@@ -292,12 +321,26 @@ root.IAOM_GRAPHICS={C,comparison,text,rect,photo,outline,verdict};
     path(g, [[xStop, y - 7], [xStop, y + h + 9]], C.silver, 1.3, false, null, [3, 5]);
     label(g, mobile ? 'Later views excluded' : 'Later views do not enter this request', W - margin, H - 10, mobile ? 22 : 19, C.soft, 400, 'right');
   }
+  function captionBaseline(mobile, H) {
+    return H - (mobile ? 295 : 200);
+  }
+  function fitViewPair(project, first, second, mobile, W, H) {
+    // Reserve room below both photographs for the view labels and the chapter caption.
+    const headerBottom = 86;
+    const photoLimit = captionBaseline(mobile, H) - 28 - 20 - 44;
+    const photoBottom = Math.max(...corners(first, project).concat(corners(second, project)).map(p => p[1]));
+    const scale = Math.min(1, (photoLimit - headerBottom) / Math.max(1, photoBottom - headerBottom));
+    return point => {
+      const [x, y, z] = project(point);
+      return [W / 2 + (x - W / 2) * scale, headerBottom + (y - headerBottom) * scale, z];
+    };
+  }
   function caption(g, mobile, left, right, W, H) {
     if (suppressCaption) return;
     if (mobile) {
-      label(g, left, 38, H - 295, 29, C.ink, 600);
+      label(g, left, 38, captionBaseline(mobile, H), 29, C.ink, 600);
     } else {
-      label(g, left, 55, 566, 28, C.ink, 600);
+      label(g, left, 55, captionBaseline(mobile, H), 28, C.ink, 600);
     }
   }
   function objectAnchor(g, c, images, mobile, W) {
@@ -308,12 +351,13 @@ root.IAOM_GRAPHICS={C,comparison,text,rect,photo,outline,verdict};
     label(g, c.label, x + w + 18, y + 52, mobile ? 22 : 20, C.soft);
     label(g, 'Method illustration', W - (mobile ? 30 : 50), y + 24, mobile ? 22 : 19, C.soft, 400, 'right');
   }
-  function sceneObserve(g, D, images, project, t, mobile, W, H) {
+  function sceneObserve(g, D, images, cameraProject, t, mobile, W, H) {
     const c = D.cases[0], p = ease(t / 6);
-    gallery(g, D, images, project, 0, { labels: true });
     const P = { pos: [-405 + 80 * p, -8, 390 - p * 70], w: 216, h: 384, yaw: .13 + p * .06 };
-    plane(g, images, c.source, P, project, { fine: true }); region(g, P, c.source, c.source.box, project);
     const Q = { pos: [440, 4, 220], w: 220, h: 391, yaw: -.19 };
+    const project = fitViewPair(cameraProject, P, Q, mobile, W, H);
+    gallery(g, D, images, project, 0, { labels: true });
+    plane(g, images, c.source, P, project, { fine: true }); region(g, P, c.source, c.source.box, project);
     plane(g, images, c.target, Q, project, { fine: true, dim: .1 });
     const a = project(local(P, .5, 1)), b = project(local(Q, .5, 1));
     label(g, 'View 1 / query', a[0], a[1] + 29, mobile ? 25 : 24, C.signal, 600, 'center');
@@ -547,10 +591,11 @@ root.IAOM_GRAPHICS={C,comparison,text,rect,photo,outline,verdict};
     caption(g,mobile,'Fit 17 keeps its box; all three fits score that box.','',W,H);
   }
 
-  function sceneReturn(g, D, images, project, t, mobile, W, H) {
+  function sceneReturn(g, D, images, cameraProject, t, mobile, W, H) {
     const c = D.cases[0], p = ease(t / 5);
-    gallery(g, D, images, project, 12, { alpha: .30 });
     const A = { pos: [-395, -4, 260], w: 245, h: 436, yaw: mix(.23, .035, p) }, B = { pos: [395, -4, 260], w: 245, h: 436, yaw: mix(-.23, -.035, p) };
+    const project = fitViewPair(cameraProject, A, B, mobile, W, H);
+    gallery(g, D, images, project, 12, { alpha: .30 });
     plane(g, images, c.source, A, project, { fine: true }); region(g, A, c.source, c.source.box, project);
     plane(g, images, c.target, B, project, { fine: true }); region(g, B, c.target, c.iaom.box, project);
     const middle = project([0, 0, 350]);
@@ -599,7 +644,8 @@ root.IAOM_GRAPHICS={C,comparison,text,rect,photo,outline,verdict};
 const D=window.IAOM_DATA,G=window.IAOM_GRAPHICS,S=window.IAOM_SPATIAL,$=id=>document.getElementById(id);
 const canvases={method:$('method-stage'),results:$('result-stage')},contexts={method:canvases.method.getContext('2d'),results:canvases.results.getContext('2d')},images={};
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)'),steps=S.steps,durations=S.durations;
-const state={caseIndex:0,baselineId:D.cases[0].defaultComparison,step:0,playing:!reduced.matches,time:reduced.matches?durations[0]*.66:0,ready:false};
+const initialCase = Math.max(0, D.cases.findIndex(c => c.id === panelOptions.get('example')));
+const state={caseIndex:initialCase,baselineId:D.cases[initialCase].defaultComparison,step:0,playing:!reduced.matches,time:reduced.matches?durations[0]*.66:0,ready:false};
 const choices={};let last=performance.now(),frame=null,reveal=reduced.matches?1.8:0,methodVisible=!('IntersectionObserver' in window);
 const mobile=()=>window.innerWidth<=700;
 function currentBaseline(){const c=D.cases[state.caseIndex];return c.comparisons.find(b=>b.id===state.baselineId)||c.comparisons[0];}
